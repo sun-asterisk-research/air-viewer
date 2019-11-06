@@ -1,6 +1,6 @@
-# demo-ocr
+# Air Visual Frontend
 
-> My smashing Nuxt.js project
+> My Air Visual frontend project
 
 ## Build Setup
 
