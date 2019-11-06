@@ -6,6 +6,8 @@ services:
     depends_on:
       - db
     build: ./backend
+    environment:
+      DB_HOST: db:3306
     labels:
       traefik.enable: true
       traefik.backend: "flask"
