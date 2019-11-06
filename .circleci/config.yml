@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    
+    docker:
+      - image: tiangolo/uwsgi-nginx-flask:python3.6
+    steps:
+      - checkout
+
+      - run:
+          command: |
+            pip install flask_cors
+            pip install pytest 
+            py.test

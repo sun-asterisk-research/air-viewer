@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+
+  backend:
+    depends_on:
+      - db
+    build: ./backend
+    labels:
+      traefik.enable: true
+      traefik.backend: "flask"
+      traefik.frontend.rule: PathPrefix:/api
+      traefik.port: '80'
+      traefik.flask.weight: 10
+
+  frontend:
+    build: 
+      context: ./frontend
+      args:
+          FRONTEND_ENV: ${FRONTEND_ENV-production}
+    restart: always
+    labels:
+      traefik.enable: true
+      traefik.backend: "nuxt"
+      traefik.frontend.rule: PathPrefix:/
+      traefik.port: '3000'
+      traefik.nuxt.weight: 1
+
+  db:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d/:ro
+  
+  traefik:
+    image: traefik:1.7
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik/traefik.toml:/etc/traefik/traefik.toml:ro
+      - ./traefik/acme:/etc/traefik/acme
+    ports:
+     - "80:80"
+     - "443:443"
+     - "8080:8080"
