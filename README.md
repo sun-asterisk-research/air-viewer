@@ -1,5 +1,8 @@
 # Running a Air Visual application backend + frontend over HTTPS with traefik and Let's Encrypt
 
+copy .env.example -> .env
+config `MYSQL_ROOT_PASSWORD`
+
 modified: traefik/traefik.toml
 change to your domain
 ```
