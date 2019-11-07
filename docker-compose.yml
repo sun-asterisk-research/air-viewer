@@ -8,6 +8,7 @@ services:
     build: ./backend
     environment:
       DB_HOST: db:3306
+      DB_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     labels:
       traefik.enable: true
       traefik.backend: "flask"
@@ -33,7 +34,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
   

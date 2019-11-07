@@ -12,8 +12,9 @@ api = Api(app)
 
 # Config Mysql
 DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_PASSWORD = os.getenv('DB_PASSWORD', 'root')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@' + DB_HOST + '/air_visual'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:'+ DB_PASSWORD +'@' + DB_HOST + '/air_visual'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'some-secret-string'
 
