@@ -1,16 +1,25 @@
 from flask_restful import Resource, reqparse
-from app.models import UserModel, RevokedTokenModel
+from app.models import UserModel, RevokedTokenModel, NodeModel
 from flask_jwt_extended import (create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required, get_jwt_identity, get_raw_jwt)
 
 parser = reqparse.RequestParser()
 parser.add_argument('username', help = 'This field cannot be blank', required = True)
 parser.add_argument('password', help = 'This field cannot be blank', required = True)
 
+parserNode = reqparse.RequestParser()
+parserNode.add_argument('name', help = 'This field cannot be blank', required = True)
+parserNode.add_argument('address', help = 'This field cannot be blank', required = True)
+parserNode.add_argument('lat', help = 'This field cannot be blank', required = True)
+parserNode.add_argument('long', help = 'This field cannot be blank', required = True)
+parserNode.add_argument('manager', help = 'This field cannot be blank', required = True)
 
 class UserRegistration(Resource):
     def post(self):
         data = parser.parse_args()
         
+        if UserModel.count_user() > 0:
+            return {'message': 'cannot create account'}
+
         if UserModel.find_by_username(data['username']):
             return {'message': 'User {} already exists'.format(data['username'])}
         
@@ -91,10 +100,66 @@ class AllUsers(Resource):
     def delete(self):
         return UserModel.delete_all()
 
+class AllNodesPublic(Resource):
+    def get(self):
+        return NodeModel.return_all_public()
 
-class SecretResource(Resource):
+class AllNodesPrivate(Resource):
     @jwt_required
     def get(self):
-        return {
-            'answer': 42
-        }
+        return NodeModel.return_all_private()
+
+class CreateNode(Resource):
+    @jwt_required
+    def put(self):
+        data = parserNode.parse_args()
+        generateCode = NodeModel.randomString(8)
+
+        while NodeModel.find_by_key(generateCode):
+            generateCode = NodeModel.randomString(8)
+
+        new_node = NodeModel(
+            name = data['name'],
+            address = data['address'],
+            lat = data['lat'],
+            long = data['long'],
+            manager = data['manager'],
+            key = generateCode
+        )
+        try:
+            new_node.save_to_db()
+            return {
+                    'message': 'Node {} was created'.format(data['name']),
+                    'key': generateCode
+                }
+        except:
+            return {'message': 'Something went wrong'}, 500
+
+class UpdateNode(Resource):
+    @jwt_required
+    def post(self, id):
+        data = parserNode.parse_args()
+        try:
+            node = NodeModel.find_by_id(id)
+            node.name = data['name']
+            node.addres = data['address']
+            node.lat = data['lat']
+            node.long = data['long']
+            node.manager = data['manager']
+            node.save_to_db()
+            return {
+                    'message': 'Node {} was updated'.format(data['name']),
+                }
+        except:
+            return {'message': 'Something went wrong'}, 500
+
+class DeleteNode(Resource):
+    @jwt_required
+    def delete(self, id):
+        try:
+            NodeModel.delete_by_id(id)
+            return {
+                    'message': 'Node was deleted'
+                }
+        except:
+            return {'message': 'Something went wrong'}, 500

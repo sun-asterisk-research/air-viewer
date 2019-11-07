@@ -39,10 +39,23 @@ def check_if_token_in_blacklist(decrypted_token):
 
 from app import models, resources, views
 
+#post
 api.add_resource(resources.UserRegistration, '/api/registration')
+#post
 api.add_resource(resources.UserLogin, '/api/login')
+#post
 api.add_resource(resources.UserLogoutAccess, '/api/logout/access')
+#post
 api.add_resource(resources.UserLogoutRefresh, '/api/logout/refresh')
+#post
 api.add_resource(resources.TokenRefresh, '/api/token/refresh')
-api.add_resource(resources.AllUsers, '/api/users')
-api.add_resource(resources.SecretResource, '/api/secret')
+#get
+api.add_resource(resources.AllNodesPublic, '/api/node/public')
+#get
+api.add_resource(resources.AllNodesPrivate, '/api/node/private')
+#put
+api.add_resource(resources.CreateNode, '/api/node')
+#post
+api.add_resource(resources.UpdateNode, '/api/node/<int:id>')
+#delete
+api.add_resource(resources.DeleteNode, '/api/node/<int:id>')
