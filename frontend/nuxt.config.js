@@ -12,8 +12,27 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' }
     ]
+  },
+
+  /*
+  ** Configuration for @nuxtjs/pwa
+  ** https://developer.mozilla.org/en-US/docs/Web/Manifest
+  */
+  manifest: {
+    name: 'Sun* Air Visual',
+    short_name: 'Sun* Air Visual',
+    description: 'Sun* Air Visual',
+    theme_color: '#172b4d'
+  },
+
+  meta: {
+    // apple-mobile-web-app-capable=yes
+    // https://medium.com/@firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb
+    mobileAppIOS: true,
+    appleStatusBarStyle: '#172b4d'
   },
   /*
   ** Customize the progress-bar color
@@ -23,13 +42,17 @@ export default {
   ** Global CSS
   */
   css: [
-    'ant-design-vue/dist/antd.css'
+    '~assets/argon/vendor/nucleo/css/nucleo.css',
+    '@fortawesome/fontawesome-free/css/all.css',
+    '~assets/argon/scss/argon.scss',
+    'bootstrap-vue/dist/bootstrap-vue.css',
+    '~assets/transitions.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/antd-ui'
+    '~/plugins/argon/argon-kit'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,6 +67,19 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // Doc: https://bootstrap-vue.js.org/docs/
+    ['bootstrap-vue/nuxt', {
+      bootstrapCSS: false,
+      bootstrapVueCSS: false,
+      componentPlugins: [
+        'Carousel',
+        'Spinner'
+      ],
+      directivePlugins: [
+        'Tooltip',
+        'Popover'
+      ]
+    }],
     '@nuxtjs/pwa'
   ],
   /*
