@@ -73,6 +73,7 @@ class NodeModel(db.Model):
     long = db.Column(db.Float, nullable = False)
     manager = db.Column(db.String(200), nullable = False)
     key = db.Column(db.String(8), nullable = False)
+    datas = db.relationship('DataNodesModel', backref='nodes')
 
     def save_to_db(self):
         db.session.add(self)
@@ -80,17 +81,36 @@ class NodeModel(db.Model):
 
     @classmethod
     def return_all_public(cls):
+        # fractal datas of node
+        def to_json_data(data):
+            return {
+                'aqi': data.aqi,
+                'pm25': data.pm25,
+                'pm10': data.pm10,
+                'created_at': data.created_at.strftime("%m/%d/%Y, %H:%M:%S")
+            }
+        # fractal nodes
         def to_json(x):
             return {
                 'name': x.name,
                 'address': x.address,
                 'lat': x.lat,
-                'long': x.long
+                'long': x.long,
+                'datas': list(map(lambda y: to_json_data(y), DataNodesModel.query.filter_by(node_id = x.id).all()))
             }
         return {'nodes': list(map(lambda x: to_json(x), NodeModel.query.all()))}
     
     @classmethod
     def return_all_private(cls):
+        # fractal datas of node
+        def to_json_data(data):
+            return {
+                'aqi': data.aqi,
+                'pm25': data.pm25,
+                'pm10': data.pm10,
+                'created_at': data.created_at.strftime("%m/%d/%Y, %H:%M:%S")
+            }
+
         def to_json(x):
             return {
                 'name': x.name,
@@ -98,7 +118,8 @@ class NodeModel(db.Model):
                 'lat': x.lat,
                 'long': x.long,
                 'manager': x.manager,
-                'key': x.key
+                'key': x.key,
+                'datas': list(map(lambda y: to_json_data(y), DataNodesModel.query.filter_by(node_id = x.id).all()))
             }
         return {'nodes': list(map(lambda x: to_json(x), NodeModel.query.all()))}
 
@@ -119,4 +140,31 @@ class NodeModel(db.Model):
     def randomString(stringLength):
         letters = string.ascii_letters
         return ''.join(random.choice(letters) for i in range(stringLength))
+
+class DataNodesModel(db.Model):
+    __tablename__ = 'datas'
+
+    id = db.Column(db.Integer, primary_key = True)
+    node_id = db.Column(db.Integer, db.ForeignKey('nodes.id'))
+    aqi = db.Column(db.Integer, nullable = False)
+    pm25 = db.Column(db.Float, nullable = False)
+    pm10 = db.Column(db.Float, nullable = False)
+    created_at = db.Column(db.DateTime,  default=db.func.current_timestamp())
+    updated_at = db.Column(db.DateTime,  default=db.func.current_timestamp(),
+                                       onupdate=db.func.current_timestamp())
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
+    @classmethod
+    def return_all_public(cls):
+        def to_json(x):
+            return {
+                'aqi': x.aqi,
+                'pm25': x.pm25,
+                'pm10': x.pm10,
+                'node_id': x.node_id
+            }
+        return {'nodes': list(map(lambda x: to_json(x), DataNodesModel.query.all()))}
     

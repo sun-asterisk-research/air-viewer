@@ -60,3 +60,5 @@ api.add_resource(resources.CreateNode, '/api/node')
 api.add_resource(resources.UpdateNode, '/api/node/<int:id>')
 #delete
 api.add_resource(resources.DeleteNode, '/api/node/<int:id>')
+#put Data from PI
+api.add_resource(resources.StoreData, '/api/secret/<key>')

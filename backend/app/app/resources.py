@@ -1,5 +1,5 @@
 from flask_restful import Resource, reqparse
-from app.models import UserModel, RevokedTokenModel, NodeModel
+from app.models import UserModel, RevokedTokenModel, NodeModel, DataNodesModel
 from flask_jwt_extended import (create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required, get_jwt_identity, get_raw_jwt)
 
 parser = reqparse.RequestParser()
@@ -12,6 +12,11 @@ parserNode.add_argument('address', help = 'This field cannot be blank', required
 parserNode.add_argument('lat', help = 'This field cannot be blank', required = True)
 parserNode.add_argument('long', help = 'This field cannot be blank', required = True)
 parserNode.add_argument('manager', help = 'This field cannot be blank', required = True)
+
+parserData = reqparse.RequestParser()
+parserData.add_argument('aqi', help = 'This field cannot be blank', required = True)
+parserData.add_argument('pm25', help = 'This field cannot be blank', required = True)
+parserData.add_argument('pm10', help = 'This field cannot be blank', required = True)
 
 class UserRegistration(Resource):
     def post(self):
@@ -160,6 +165,29 @@ class DeleteNode(Resource):
             NodeModel.delete_by_id(id)
             return {
                     'message': 'Node was deleted'
+                }
+        except:
+            return {'message': 'Something went wrong'}, 500
+
+class StoreData(Resource):
+    def put(self, key):
+        data = parserData.parse_args()
+
+        try:
+            node_id = NodeModel.find_by_key(key)
+            print(node_id)
+            new_node = DataNodesModel(
+                aqi = data['aqi'],
+                pm25 = data['pm25'],
+                pm10 = data['pm10'],
+                node_id = node_id.id
+            )
+            new_node.save_to_db()
+            return {
+                    'message': 'Data from node {} was created'.format(node_id.name),
+                    'aqi': data['aqi'],
+                    'pm25': data['pm25'],
+                    'pm10': data['pm10']
                 }
         except:
             return {'message': 'Something went wrong'}, 500
