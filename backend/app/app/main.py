@@ -54,11 +54,11 @@ api.add_resource(resources.TokenRefresh, '/api/token/refresh')
 api.add_resource(resources.AllNodesPublic, '/api/node/public')
 #get
 api.add_resource(resources.AllNodesPrivate, '/api/node/private')
-#put
+#post
 api.add_resource(resources.CreateNode, '/api/node')
 #post
 api.add_resource(resources.UpdateNode, '/api/node/<int:id>')
 #delete
 api.add_resource(resources.DeleteNode, '/api/node/<int:id>')
-#put Data from PI
+#post Data from PI
 api.add_resource(resources.StoreData, '/api/secret/<key>')

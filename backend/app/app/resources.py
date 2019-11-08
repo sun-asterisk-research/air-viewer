@@ -116,7 +116,7 @@ class AllNodesPrivate(Resource):
 
 class CreateNode(Resource):
     @jwt_required
-    def put(self):
+    def post(self):
         data = parserNode.parse_args()
         generateCode = NodeModel.randomString(8)
 
@@ -170,7 +170,7 @@ class DeleteNode(Resource):
             return {'message': 'Something went wrong'}, 500
 
 class StoreData(Resource):
-    def put(self, key):
+    def post(self, key):
         data = parserData.parse_args()
 
         try:
