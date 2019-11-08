@@ -72,7 +72,7 @@ class NodeModel(db.Model):
     lat = db.Column(db.Float, nullable = False)
     long = db.Column(db.Float, nullable = False)
     manager = db.Column(db.String(200), nullable = False)
-    key = db.Column(db.String(8), nullable = False)
+    key = db.Column(db.String(30), nullable = False)
     datas = db.relationship('DataNodesModel', backref='nodes')
 
     def save_to_db(self):

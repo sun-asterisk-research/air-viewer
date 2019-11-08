@@ -118,10 +118,10 @@ class CreateNode(Resource):
     @jwt_required
     def post(self):
         data = parserNode.parse_args()
-        generateCode = NodeModel.randomString(8)
+        generateCode = NodeModel.randomString(30)
 
         while NodeModel.find_by_key(generateCode):
-            generateCode = NodeModel.randomString(8)
+            generateCode = NodeModel.randomString(30)
 
         new_node = NodeModel(
             name = data['name'],
