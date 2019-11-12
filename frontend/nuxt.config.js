@@ -100,10 +100,10 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: 'https://service.test/api/login', method: 'post', propertyName: 'access_token' },
-          refresh: { url: 'https://service.test/api/login', method: 'post', propertyName: 'refresh_token' },
-          logout: { url: 'https://service.test/api/logout/access', method: 'post' },
-          user: { url: 'https://service.test/api/user', method: 'get', propertyName: 'data' }
+          login: { url: '/api/login', method: 'post', propertyName: 'access_token' },
+          refresh: { url: '/api/login', method: 'post', propertyName: 'refresh_token' },
+          logout: { url: '/api/logout/access', method: 'post' },
+          user: { url: '/api/user', method: 'get', propertyName: 'data' }
         },
         tokenRequired: true,
         tokenType: 'Bearer'
