@@ -144,7 +144,7 @@ class NodeModel(db.Model):
                 'address': x.address,
                 'lat': x.lat,
                 'long': x.long,
-                'data': to_json_data(DataNodesModel.query.filter_by(node_id = x.id).first())
+                'data': to_json_data(DataNodesModel.query.filter_by(node_id = x.id).last())
             }
         return {'nodes': list(map(lambda x: to_json(x), NodeModel.query.all()))}
     
