@@ -1,3 +1,3 @@
 export default () => ({
-  nodes: null
+  nodes: []
 })
