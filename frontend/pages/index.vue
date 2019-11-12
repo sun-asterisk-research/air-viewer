@@ -1,24 +1,126 @@
 <template>
   <div>
     <hero>
-      <div class="mt-4 mb-5">
-        <logo />
+      <div class="">
         <p class="lead text-white">
-          Hello World
+          <span> Hanoi air quality daily forecast </span>
         </p>
+      </div>
+      <div class="mt-3 mb-5">
+        <b-carousel
+          indicators
+          :interval="5000"
+          class="h-50"
+        >
+          <b-carousel-slide v-for="node in nodes" :key="node.id">
+            <template slot="img">
+              <b-card class="text-center" :class="['card-' + node.data.status.type]">
+                <b-card-title>
+                  <i class="ni ni-compass-04" />
+                  <span>{{ node.address }}</span>
+                </b-card-title>
+
+                <b-card-text class="card__status" :class="['color-' + node.data.status.type]">
+                  {{ node.data.status.info }}
+                </b-card-text>
+                <b-card-text class="card__status-data" :class="['color-' + node.data.status.type]">
+                  {{ node.data.aqi }} <span class="card__status-param">US AQI</span>
+                </b-card-text>
+
+                <b-card-text class="card__status-info" :class="['color-' + node.data.status.type]">
+                  <span class="card__status-number">PM2.5 | {{ node.data.pm25 }} µg/m³</span>
+                  <span class="card__status-number">PM10 | {{ node.data.pm10 }} µg/m³</span>
+                </b-card-text>
+              </b-card>
+            </template>
+          </b-carousel-slide>
+        </b-carousel>
       </div>
     </hero>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import Hero from '~/components/argon-demo/Hero'
-import Logo from '~/components/Logo.vue'
 export default {
   components: {
-    Hero,
-    Logo
+    Hero
+  },
+  computed: {
+    ...mapState('node', {
+      nodes: state => state.nodes.nodes
+    })
   }
 }
 </script>
-<style>
+<style lang="scss">
+.card {
+  &-1 {
+    background-color: #A8E05F;
+  }
+  &-2 {
+    background-color: #FDD74B;
+  }
+  &-3 {
+    background-color: #FB9B57;
+  }
+  &-4 {
+    background-color: #fe6a69;
+  }
+  &-5 {
+    background-color: #a97abc;
+  }
+  &-6 {
+    background-color: #a87383;
+  }
+  &__status {
+    font-size: 20px;
+    font-weight: 600;
+
+    &-data {
+      font-size: 104px;
+      font-weight: 600;
+      line-height: 50px;
+    }
+
+    &-param {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 50px;
+    }
+
+    &-info {
+      margin-bottom: 20px!important;
+    }
+
+    &-number {
+      background: #fff;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 5px 10px;
+    }
+  }
+}
+
+.color {
+  &-1 {
+    color: #718b3a;
+  }
+  &-2 {
+    color: #a57f23;
+  }
+  &-3 {
+    color: #b25826;
+  }
+  &-4 {
+    color: #af2c3b;
+  }
+  &-5 {
+    color: #634675;
+  }
+  &-6 {
+    color: #683e51;
+  }
+}
 </style>

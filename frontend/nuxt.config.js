@@ -1,4 +1,6 @@
 
+const envPath = './.env'
+require('dotenv').config({ path: envPath })
 export default {
   mode: 'universal',
   /*
@@ -52,7 +54,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/argon/argon-kit'
+    '~/plugins/argon/argon-kit',
+    '~/plugins/axios'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -67,26 +70,63 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
+    '@nuxtjs/toast',
     // Doc: https://bootstrap-vue.js.org/docs/
     ['bootstrap-vue/nuxt', {
       bootstrapCSS: false,
       bootstrapVueCSS: false,
       componentPlugins: [
         'Carousel',
-        'Spinner'
+        'Spinner',
+        'Card'
       ],
       directivePlugins: [
         'Tooltip',
         'Popover'
       ]
     }],
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: process.env.API_HOST
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'https://service.test/api/login', method: 'post', propertyName: 'access_token' },
+          refresh: { url: 'https://service.test/api/login', method: 'post', propertyName: 'refresh_token' },
+          logout: { url: 'https://service.test/api/logout/access', method: 'post' },
+          user: { url: 'https://service.test/api/user', method: 'get', propertyName: 'data' }
+        },
+        tokenRequired: true,
+        tokenType: 'Bearer'
+      },
+      facebook: {
+        client_id: 'your facebook app id',
+        userinfo_endpoint: 'https://graph.facebook.com/v2.12/me?fields=about,name,picture{url},email',
+        scope: ['public_profile', 'email']
+      },
+      google: {
+        client_id: 'your gcloud oauth app client id'
+      }
+    },
+    redirect: {
+      login: '/?login=1',
+      logout: '/',
+      user: '/profile',
+      callback: '/'
+    }
+  },
+  toast: {
+    position: 'top-right',
+    duration: 2000
   },
   /*
   ** Build configuration

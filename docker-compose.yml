@@ -31,13 +31,17 @@ services:
 
   db:
     image: mysql:5.7
+    restart: always
     ports:
-      - "3306:3306"
+      - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
-  
+
   traefik:
     image: traefik:1.7
     #command:
@@ -52,4 +56,3 @@ services:
     ports:
      - "80:80"
      - "443:443"
-     - "8080:8080"

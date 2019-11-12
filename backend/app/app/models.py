@@ -1,5 +1,7 @@
 from app.main import db
 from passlib.hash import pbkdf2_sha256 as sha256
+from pytz import timezone
+from datetime import datetime
 
 import random
 import string
@@ -22,15 +24,6 @@ class UserModel(db.Model):
     @classmethod
     def count_user(cls):
         return cls.query.count()
-    
-    @classmethod
-    def return_all(cls):
-        def to_json(x):
-            return {
-                'username': x.username,
-                'password': x.password
-            }
-        return {'users': list(map(lambda x: to_json(x), UserModel.query.all()))}
 
     @classmethod
     def delete_all(cls):
@@ -96,7 +89,62 @@ class NodeModel(db.Model):
                 'address': x.address,
                 'lat': x.lat,
                 'long': x.long,
-                'datas': list(map(lambda y: to_json_data(y), DataNodesModel.query.filter_by(node_id = x.id).all()))
+                'datas': list(map(lambda y: to_json_data(y), DataNodesModel.query.filter_by(node_id = x.id).limit(10).all()))
+            }
+        return {'nodes': list(map(lambda x: to_json(x), NodeModel.query.all()))}
+
+    @classmethod
+    def return_all_public_current(cls):
+        # status air 1,2,3,4,5,6
+        def air_status(data):
+            if data <= 50:
+                return {
+                    "type": 1,
+                    "info": "Good"
+                }
+            elif data <= 100:
+                return {
+                    "type": 2,
+                    "info": "Moderate"
+                }
+            elif data <= 150:
+                return {
+                    "type": 3,
+                    "info": "Unhealthy for Sensitive Groups"
+                }
+            elif data <= 200:
+                return {
+                    "type": 4,
+                    "info": "Unhealthy"
+                }
+            elif data <= 300:
+                return {
+                    "type": 5,
+                    "info": "Very Unhealthy"
+                }
+            else:
+                return {
+                    "type": 6,
+                    "info": "Hazardous"
+                }
+        # fractal datas of node
+        def to_json_data(data):
+            return {
+                'aqi': data.aqi,
+                'pm25': data.pm25,
+                'pm10': data.pm10,
+                'status': air_status(data.aqi),
+                'created_at': data.created_at.strftime("%m/%d/%Y, %H:%M:%S")
+            }
+        # fractal nodes
+        def to_json(x):
+            return {
+                'id': x.id,
+                'name': x.name,
+                'address': x.address,
+                'lat': x.lat,
+                'long': x.long,
+                'data': to_json_data(DataNodesModel.query.filter_by(node_id = x.id).first())
             }
         return {'nodes': list(map(lambda x: to_json(x), NodeModel.query.all()))}
     
@@ -149,9 +197,9 @@ class DataNodesModel(db.Model):
     aqi = db.Column(db.Integer, nullable = False)
     pm25 = db.Column(db.Float, nullable = False)
     pm10 = db.Column(db.Float, nullable = False)
-    created_at = db.Column(db.DateTime,  default=db.func.current_timestamp())
-    updated_at = db.Column(db.DateTime,  default=db.func.current_timestamp(),
-                                       onupdate=db.func.current_timestamp())
+    created_at = db.Column(db.DateTime,  default=datetime.now(timezone('Asia/Ho_Chi_Minh')))
+    updated_at = db.Column(db.DateTime,  default=datetime.now(timezone('Asia/Ho_Chi_Minh')),
+                                       onupdate=datetime.now(timezone('Asia/Ho_Chi_Minh')))
 
     def save_to_db(self):
         db.session.add(self)

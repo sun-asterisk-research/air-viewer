@@ -12,9 +12,11 @@ api = Api(app)
 
 # Config Mysql
 DB_HOST = os.getenv('DB_HOST', 'localhost')
+DB_DATABASE = os.getenv('DB_DATABASE', 'air_visual')
+DB_USERNAME = os.getenv('DB_USERNAME', 'root')
 DB_PASSWORD = os.getenv('DB_PASSWORD', 'root')
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:'+ DB_PASSWORD +'@' + DB_HOST + '/air_visual'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://' + DB_USERNAME + ':'+ DB_PASSWORD +'@' + DB_HOST + '/' + DB_DATABASE
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'some-secret-string'
 
@@ -44,6 +46,8 @@ from app import models, resources, views
 api.add_resource(resources.UserRegistration, '/api/registration')
 #post
 api.add_resource(resources.UserLogin, '/api/login')
+#get
+api.add_resource(resources.UserInfo, '/api/user')
 #post
 api.add_resource(resources.UserLogoutAccess, '/api/logout/access')
 #post
@@ -52,6 +56,8 @@ api.add_resource(resources.UserLogoutRefresh, '/api/logout/refresh')
 api.add_resource(resources.TokenRefresh, '/api/token/refresh')
 #get
 api.add_resource(resources.AllNodesPublic, '/api/node/public')
+#get
+api.add_resource(resources.AllNodesPublicCurrent, '/api/node/public/current')
 #get
 api.add_resource(resources.AllNodesPrivate, '/api/node/private')
 #post

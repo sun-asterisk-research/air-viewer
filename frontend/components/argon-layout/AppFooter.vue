@@ -1,23 +1,5 @@
 <template>
   <footer class="footer has-cards">
-    <div class="container container-lg">
-      <div class="row">
-        <div class="col-md-6 mb-5 mb-md-0">
-          <div class="card card-lift--hover shadow border-0">
-            <nuxt-link to="/argon-demo/landing" title="Landing Page">
-              <img v-lazy="'/argon/img/theme/landing.jpg'" class="card-img">
-            </nuxt-link>
-          </div>
-        </div>
-        <div class="col-md-6 mb-5 mb-lg-0">
-          <div class="card card-lift--hover shadow border-0">
-            <nuxt-link to="/argon-demo/profile" title="Profile Page">
-              <img v-lazy="'/argon/img/theme/profile.jpg'" class="card-img">
-            </nuxt-link>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="container">
       <div class="row row-grid align-items-center my-md">
         <div class="col-lg-6">
@@ -32,7 +14,7 @@
           <a
             target="_blank"
             rel="noopener"
-            href="https://twitter.com/creativetim"
+            href="https://twitter.com/hashtag/sunasterisk"
             class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg"
             data-toggle="tooltip"
             data-original-title="Follow us"
@@ -42,7 +24,7 @@
           <a
             target="_blank"
             rel="noopener"
-            href="https://www.facebook.com/creativetim"
+            href="https://www.facebook.com/SunAsteriskVietnam"
             class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg"
             data-toggle="tooltip"
             data-original-title="Like us"
@@ -52,17 +34,7 @@
           <a
             target="_blank"
             rel="noopener"
-            href="https://dribbble.com/creativetim"
-            class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round"
-            data-toggle="tooltip"
-            data-original-title="Follow us"
-          >
-            <i class="fab fa-dribbble" />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener"
-            href="https://github.com/creativetimofficial"
+            href="https://github.com/sun-asterisk-research"
             class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg"
             data-toggle="tooltip"
             data-original-title="Star on Github"
@@ -76,24 +48,24 @@
         <div class="col-md-6">
           <div class="copyright">
             &copy; {{ year }}
-            <a href="https://www.creative-tim.com" target="_blank" rel="noopener">Creative Tim</a> & <a href="https://www.binarcode.com" target="_blank" rel="noopener">Binar Code</a>
+            <a href="#" target="_blank" rel="noopener">Sun*</a> & <a href="#" target="_blank" rel="noopener">R&D Research</a>
           </div>
         </div>
         <div class="col-md-6">
           <ul class="nav nav-footer justify-content-end">
             <li class="nav-item">
-              <a href="https://www.creative-tim.com" class="nav-link" target="_blank" rel="noopener">Creative Tim</a>
+              <a href="#" class="nav-link" target="_blank" rel="noopener">Sun*</a>
             </li>
             <li class="nav-item">
-              <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank" rel="noopener">About
+              <a href="#" class="nav-link" target="_blank" rel="noopener">About
                 Us</a>
             </li>
             <li class="nav-item">
-              <a href="http://blog.creative-tim.com" class="nav-link" target="_blank" rel="noopener">Blog</a>
+              <a href="#" class="nav-link" target="_blank" rel="noopener">Blog</a>
             </li>
             <li class="nav-item">
               <a
-                href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
+                href="#"
                 class="nav-link"
                 target="_blank"
                 rel="noopener"

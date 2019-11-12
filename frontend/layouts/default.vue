@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import StarterHeader from '~/components/argon-layout/starter/StarterHeader'
-import StarterFooter from '~/components/argon-layout/starter/StarterFooter'
+import StarterHeader from '~/components/argon-layout/AppHeader'
+import StarterFooter from '~/components/argon-layout/AppFooter'
 
 export default {
   components: {

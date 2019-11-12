@@ -98,16 +98,18 @@ class TokenRefresh(Resource):
         return {'access_token': access_token}
 
 
-class AllUsers(Resource):
+class UserInfo(Resource):
+    @jwt_required
     def get(self):
-        return UserModel.return_all()
-    
-    def delete(self):
-        return UserModel.delete_all()
+        return {'data': get_jwt_identity()}
 
 class AllNodesPublic(Resource):
     def get(self):
         return NodeModel.return_all_public()
+
+class AllNodesPublicCurrent(Resource):
+    def get(self):
+        return NodeModel.return_all_public_current()
 
 class AllNodesPrivate(Resource):
     @jwt_required
@@ -175,7 +177,6 @@ class StoreData(Resource):
 
         try:
             node_id = NodeModel.find_by_key(key)
-            print(node_id)
             new_node = DataNodesModel(
                 aqi = data['aqi'],
                 pm25 = data['pm25'],

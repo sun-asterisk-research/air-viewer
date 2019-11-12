@@ -42,12 +42,15 @@
               </div>
               <form role="form">
                 <base-input
+                  v-model="username"
                   alternative
+                  type="text"
                   class="mb-3"
-                  placeholder="Email"
-                  addon-left-icon="ni ni-email-83"
+                  placeholder="Username"
+                  addon-left-icon="ni ni-circle-08"
                 />
                 <base-input
+                  v-model="password"
                   alternative
                   type="password"
                   placeholder="Password"
@@ -57,7 +60,7 @@
                   Remember me
                 </base-checkbox>
                 <div class="text-center">
-                  <base-button type="primary" class="my-4">
+                  <base-button type="primary" class="my-4" @click="login">
                     Sign In
                   </base-button>
                 </div>
@@ -83,7 +86,47 @@
 </template>
 <script>
 export default {
-  layout: 'argon-demo'
+  components: {},
+  auth: 'guest',
+  data () {
+    return {
+      username: '',
+      password: ''
+    }
+  },
+  watch: {},
+  mounted () {},
+  methods: {
+    google () {},
+    facebook () {},
+    async login () {
+      // await this.$auth.loginWith('local', {
+      //   data: {
+      //     'username': this.username,
+      //     'password': this.password
+      //   }
+      // }).catch((e) => {
+      //   this.$toast.error('Failed Logging In')
+      // })
+      try {
+        await this.$auth.loginWith('local', {
+          data: {
+            'username': this.username,
+            'password': this.password
+          }
+        }).catch((e) => {
+          this.$toast.error('Failed Logging In')
+        })
+        if (this.$auth.loggedIn) {
+          this.$toast.success('Successfully Logged In')
+        }
+      } catch (e) {
+        this.$toast.error('Username or Password wrong')
+      }
+    },
+    logout () {},
+    check () {}
+  }
 }
 </script>
 <style>
