@@ -22,10 +22,13 @@ services:
       args:
           FRONTEND_ENV: ${FRONTEND_ENV-production}
     restart: always
+    environment:
+      TZ: Asia/Ho_Chi_Minh
     labels:
       traefik.enable: true
       traefik.backend: "nuxt"
       traefik.frontend.rule: PathPrefix:/
+      traefik.frontend.rule: Host:${API_HOST}
       traefik.port: '3000'
       traefik.nuxt.weight: 1
 
@@ -44,15 +47,15 @@ services:
 
   traefik:
     image: traefik:1.7
-    #command:
-    #  - --logLevel=INFO
-    # - --accessLog.filePath=/var/log/traefik/access.log
-    #  - --traefikLog.filePath=/var/log/traefik/traefik.log
+    command:
+      - --logLevel=INFO
+      - --accessLog.filePath=/var/log/traefik/access.log
+      - --traefikLog.filePath=/var/log/traefik/traefik.log
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik/traefik.toml:/etc/traefik/traefik.toml:ro
       - ./traefik/acme:/etc/traefik/acme
-    #  - ./traefik/logs:/var/log/traefik
+      - ./traefik/logs:/var/log/traefik
     ports:
      - "80:80"
      - "443:443"

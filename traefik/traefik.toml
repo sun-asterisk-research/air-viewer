@@ -13,13 +13,13 @@ defaultEntryPoints = ["https","http"]
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "airvisual.sun-asterisk.vn"
+# domain = "service.test"
 watch = true
 exposedByDefault = false
 
 [acme]
 email = "admin@sun-asterisk.vn"
-caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+# caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
 storage = "acme.json"
 entryPoint = "https"
 onHostRule = true
@@ -27,5 +27,5 @@ onHostRule = true
 [acme.httpChallenge]
   entryPoint = "http"
 
-[[acme.domains]]
-  main = "airvisual.sun-asterisk.vn"
+# [[acme.domains]]
+#   main = "service.test"
