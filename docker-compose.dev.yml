@@ -77,3 +77,10 @@ services:
     networks:
       outside-world:
       internal-network:
+
+networks:
+  # everything that is *only* on "internal network" cannot talk to WAN
+  internal-network:
+    internal: true
+  # add this network to a container to make it talk to the rest of the world
+  outside-world:
