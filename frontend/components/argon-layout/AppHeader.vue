@@ -1,13 +1,13 @@
 <template>
   <header class="header-global">
     <base-nav class="navbar-main" transparent type="" effect="light" expand>
-      <nuxt-link slot="brand" class="navbar-brand mr-lg-5" to="/argon-demo/">
+      <nuxt-link slot="brand" class="navbar-brand mr-lg-5" to="/">
         <img src="/argon/img/brand/white.png" alt="logo">
       </nuxt-link>
 
       <div slot="content-header" slot-scope="{closeMenu}" class="row">
         <div class="col-6 collapse-brand">
-          <nuxt-link to="/argon-demo/">
+          <nuxt-link to="/">
             <img src="/argon/img/brand/blue.png">
           </nuxt-link>
         </div>

@@ -55,7 +55,11 @@ export default {
   */
   plugins: [
     '~/plugins/argon/argon-kit',
-    '~/plugins/axios'
+    '~/plugins/axios',
+    {
+      src: '~/plugins/amcharts.js',
+      ssr: false
+    }
   ],
   /*
   ** Nuxt.js dev-modules

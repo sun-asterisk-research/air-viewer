@@ -13,6 +13,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.7.8",
     "@fortawesome/fontawesome-free": "^5.9.0",
     "@nuxtjs/auth": "^4.8.4",
     "@nuxtjs/axios": "^5.5.4",

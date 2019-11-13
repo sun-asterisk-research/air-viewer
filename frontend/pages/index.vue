@@ -12,9 +12,9 @@
           :interval="5000"
           class="h-50"
         >
-          <b-carousel-slide v-for="node in nodes" :key="node.id">
+          <b-carousel-slide v-for="node in nodes" :key="node.id" class="slide">
             <template slot="img">
-              <b-card class="text-center" :class="['card-' + node.data.status.type]">
+              <b-card class="text-center" :class="['card-' + node.data.status.type]" @click="detailNode(node)">
                 <b-card-title>
                   <i class="ni ni-compass-04" />
                   <span>{{ node.address }}</span>
@@ -50,10 +50,19 @@ export default {
     ...mapState('node', {
       nodes: state => state.nodes.nodes
     })
+  },
+  methods: {
+    detailNode (node) {
+      console.log(111)
+      this.$router.push({ path: `/node/${node.id}` })
+    }
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
+.slide {
+  cursor: pointer;
+}
 .card {
   &-1 {
     background-color: #A8E05F;
