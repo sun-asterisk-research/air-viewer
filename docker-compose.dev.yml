@@ -43,6 +43,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
+      - ./db/db.cnf:/etc/mysql/conf.d/custom.cnf
 
   traefik:
     image: traefik:1.7
