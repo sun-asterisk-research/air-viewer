@@ -15,8 +15,6 @@ services:
       traefik.frontend.rule: Host:${API_HOST};PathPrefix:/api
       traefik.port: '80'
       traefik.flask.weight: 10
-    networks:
-      internal-network:
 
   frontend:
     build: 
@@ -32,8 +30,6 @@ services:
       traefik.frontend.rule: Host:${API_HOST};PathPrefix:/
       traefik.port: '3000'
       traefik.nuxt.weight: 1
-    networks:
-      internal-network:
 
   db:
     image: mysql:5.7
@@ -47,8 +43,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
     volumes:
       - ./db:/docker-entrypoint-initdb.d/:ro
-    networks:
-      internal-network:
 
   traefik:
     image: traefik:1.7
@@ -61,16 +55,6 @@ services:
       - ./traefik/traefik.toml:/etc/traefik/traefik.toml:ro
       - ./traefik/acme:/etc/traefik/acme
       - ./traefik/logs:/var/log/traefik
-    networks:
-      outside-world:
-      internal-network:
     ports:
      - "80:80"
      - "443:443"
-
-networks:
-  # everything that is *only* on "internal network" cannot talk to WAN
-  internal-network:
-    internal: true
-  # add this network to a container to make it talk to the rest of the world
-  outside-world:
