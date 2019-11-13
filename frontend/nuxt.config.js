@@ -94,7 +94,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: process.env.API_HOST
+    baseURL: process.env.NODE_ENV === 'development' ? 'http://localhost:5000' : process.env.API_HOST
   },
   auth: {
     strategies: {
