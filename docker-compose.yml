@@ -17,6 +17,8 @@ services:
       traefik.flask.weight: 10
     networks:
       internal-network:
+        aliases:
+        - "backend.app"
 
   frontend:
     build: 
@@ -34,6 +36,8 @@ services:
       traefik.nuxt.weight: 1
     networks:
       internal-network:
+        aliases:
+        - "frontend.app"
 
   db:
     image: mysql:5.7
@@ -50,6 +54,8 @@ services:
       - ./db/db.cnf:/etc/mysql/conf.d/custom.cnf
     networks:
       internal-network:
+        aliases:
+        - "db"
 
   traefik:
     image: traefik:1.7
