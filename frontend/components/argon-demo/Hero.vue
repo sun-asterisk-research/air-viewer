@@ -21,26 +21,6 @@
                 A beautiful Design System for Bootstrap 4. It's Free and Open Source.
               </p>
             </slot>
-            <div class="btn-wrapper">
-              <base-button
-                tag="a"
-                href="#"
-                class="mb-3 mb-sm-0"
-                type="info"
-                icon="fa fa-code"
-              >
-                Weekly
-              </base-button>
-              <base-button
-                tag="a"
-                href="#"
-                class="mb-3 mb-sm-0"
-                type="white"
-                icon="ni ni-cloud-download-95"
-              >
-                Monthly
-              </base-button>
-            </div>
           </div>
         </div>
         <div class="row align-items-center justify-content-around stars-and-coded">

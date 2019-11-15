@@ -41,7 +41,8 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import Hero from '~/components/argon-demo/Hero'
+const Hero = () => import('~/components/argon-demo/Hero')
+
 export default {
   components: {
     Hero

@@ -1,10 +1,28 @@
 from app.main import db
 from passlib.hash import pbkdf2_sha256 as sha256
 from pytz import timezone
-from datetime import datetime
+from datetime import datetime, timedelta
+from sqlalchemy.sql import func
+from sqlalchemy import text
 
 import random
 import string
+import json
+from decimal import Decimal
+
+# encode Decimal
+class fakefloat(float):
+    def __init__(self, value):
+        self._value = value
+    def __repr__(self):
+        return str(self._value)
+
+def defaultencode(o):
+    if isinstance(o, Decimal):
+        # Subclass float with custom repr?
+        return fakefloat(o)
+    raise TypeError(repr(o) + " is not JSON serializable")
+
 
 class UserModel(db.Model):
     __tablename__ = 'users'
@@ -138,13 +156,40 @@ class NodeModel(db.Model):
             }
         # fractal nodes
         def to_json(x):
+            # time 24 hours ago
+            data24h = db.session.execute('SELECT AVG(aqi) as aqi, AVG(pm25) as pm25, AVG(pm10) as pm10, \
+                        HOUR(created_at) as created_at FROM datas \
+                        WHERE node_id = :node_id AND DATE_SUB(`created_at`,INTERVAL 1 HOUR) And \
+                        created_at > DATE_SUB(NOW(), INTERVAL 1 DAY) \
+                        GROUP BY HOUR(created_at)', {'node_id': x.id})
+            if data24h.returns_rows == False:
+                response_24h = []
+            # Convert the response to a plain list of dicts
+            else:
+                response_24h = [dict(row.items()) for row in data24h]
+            
+            # time 7 days ago
+            data7day = db.session.execute("SELECT AVG(aqi) as aqi, AVG(pm25) as pm25, AVG(pm10) as pm10, \
+                        DATE_FORMAT(created_at, '%d/%m') as created_at FROM datas \
+                        WHERE node_id = :node_id AND DATE_SUB(`created_at`, INTERVAL 7 DAY) And \
+                        created_at > DATE_SUB(NOW(), INTERVAL 7 DAY) \
+                        GROUP BY DATE_FORMAT(created_at, '%d/%m')", {'node_id': x.id})
+            if data7day.returns_rows == False:
+                response_7day = []
+            # Convert the response to a plain list of dicts
+            else:
+                response_7day = [dict(row.items()) for row in data7day]
+
+            
             return {
                 'id': x.id,
                 'name': x.name,
                 'address': x.address,
                 'lat': x.lat,
                 'long': x.long,
-                'data': to_json_data(DataNodesModel.query.filter_by(node_id = x.id).order_by(DataNodesModel.created_at.desc()).first())
+                'data': to_json_data(DataNodesModel.query.filter_by(node_id = x.id).order_by(DataNodesModel.created_at.desc()).first()),
+                '_24h': json.loads(json.dumps(response_24h, default=defaultencode)),
+                '_7day': json.loads(json.dumps(response_7day, default=defaultencode))
             }
         return {'nodes': list(map(lambda x: to_json(x), NodeModel.query.all()))}
     
