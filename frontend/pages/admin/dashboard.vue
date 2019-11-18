@@ -2,14 +2,8 @@
   <div />
 </template>
 <script>
-import Hero from '~/components/argon-demo/Hero'
-import Logo from '~/components/Logo.vue'
 export default {
   layout: 'DashboardLayout',
-  components: {
-    Hero,
-    Logo
-  },
   middleware: ['auth'],
   data () {
     return {

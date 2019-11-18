@@ -13,7 +13,7 @@ ul {
   height: 100%;
   margin-left: -277px;
   overflow-y: auto;
-  background: #000;
+  background: #172b4d;
   top: 0;
   overflow: hidden;
   transition: all .5s ease;
@@ -23,7 +23,7 @@ ul {
   position: fixed;
   width: 277px;
   height: 100%;
-  background: #31373d;
+  background: #172b4d;
 }
 
 .menu__top {
@@ -74,12 +74,12 @@ ul {
   padding: 10px 15px 10px 15px;
   color: #fff;
   text-decoration: none;
-  background: #31373D;
+  background: #172b4d;
 
   &:hover {
     color: #fff;
     text-decoration: none;
-    background: #3c444b;
+    background: #5e72e4;
     transition: all 500ms ease-out;
   }
 
