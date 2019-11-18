@@ -83,7 +83,8 @@ export default {
       componentPlugins: [
         'Carousel',
         'Spinner',
-        'Card'
+        'Card',
+        'Table'
       ],
       directivePlugins: [
         'Tooltip',

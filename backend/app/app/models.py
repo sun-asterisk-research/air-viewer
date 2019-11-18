@@ -180,14 +180,17 @@ class NodeModel(db.Model):
             else:
                 response_7day = [dict(row.items()) for row in data7day]
 
-            
+            try:
+                data = to_json_data(DataNodesModel.query.filter_by(node_id = x.id).order_by(DataNodesModel.created_at.desc()).first())
+            except:
+                data = ''
             return {
                 'id': x.id,
                 'name': x.name,
                 'address': x.address,
                 'lat': x.lat,
                 'long': x.long,
-                'data': to_json_data(DataNodesModel.query.filter_by(node_id = x.id).order_by(DataNodesModel.created_at.desc()).first()),
+                'data':  data,
                 '_24h': json.loads(json.dumps(response_24h, default=defaultencode)),
                 '_7day': json.loads(json.dumps(response_7day, default=defaultencode))
             }
@@ -195,24 +198,15 @@ class NodeModel(db.Model):
     
     @classmethod
     def return_all_private(cls):
-        # fractal datas of node
-        def to_json_data(data):
-            return {
-                'aqi': data.aqi,
-                'pm25': data.pm25,
-                'pm10': data.pm10,
-                'created_at': data.created_at.strftime("%m/%d/%Y, %H:%M:%S")
-            }
-
         def to_json(x):
             return {
+                'id': x.id,
                 'name': x.name,
                 'address': x.address,
                 'lat': x.lat,
                 'long': x.long,
                 'manager': x.manager,
-                'key': x.key,
-                'datas': list(map(lambda y: to_json_data(y), DataNodesModel.query.filter_by(node_id = x.id).all()))
+                'key': x.key
             }
         return {'nodes': list(map(lambda x: to_json(x), NodeModel.query.all()))}
 
@@ -223,6 +217,20 @@ class NodeModel(db.Model):
     @classmethod
     def find_by_id(cls, id):
         return cls.query.filter_by(id = id).first()
+    
+    @classmethod
+    def get_json_node_by_id(cls, id):
+        def to_json(x):
+            return {
+                'id': x.id,
+                'name': x.name,
+                'address': x.address,
+                'lat': x.lat,
+                'long': x.long,
+                'manager': x.manager,
+                'key': x.key
+            }
+        return {'data': to_json(cls.query.filter_by(id = id).first())}
 
     @classmethod
     def delete_by_id(cls, id):

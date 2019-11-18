@@ -9,13 +9,6 @@ export default {
     return {
       node: {}
     }
-  },
-  // created() {
-  //   console.log()
-  // },
-  async created () {
-    const nodes = await this.$axios.$get('/api/node/public')
-    this.node = nodes
   }
 }
 </script>

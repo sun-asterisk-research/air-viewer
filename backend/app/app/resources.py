@@ -116,6 +116,11 @@ class AllNodesPrivate(Resource):
     def get(self):
         return NodeModel.return_all_private()
 
+class GetNode(Resource):
+    @jwt_required
+    def get(self, id):
+        return NodeModel.get_json_node_by_id(id)
+
 class CreateNode(Resource):
     @jwt_required
     def post(self):
@@ -149,7 +154,7 @@ class UpdateNode(Resource):
         try:
             node = NodeModel.find_by_id(id)
             node.name = data['name']
-            node.addres = data['address']
+            node.address = data['address']
             node.lat = data['lat']
             node.long = data['long']
             node.manager = data['manager']

@@ -40,7 +40,7 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapGetters } from 'vuex'
 const Hero = () => import('~/components/argon-demo/Hero')
 
 export default {
@@ -48,13 +48,12 @@ export default {
     Hero
   },
   computed: {
-    ...mapState('node', {
-      nodes: state => state.nodes.nodes
+    ...mapGetters('node', {
+      nodes: 'getNodes'
     })
   },
   methods: {
     detailNode (node) {
-      console.log(111)
       this.$router.push({ path: `/node/${node.id}` })
     }
   }

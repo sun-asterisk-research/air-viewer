@@ -13,4 +13,5 @@ export default function ({ $axios, redirect }) {
   // })
 
   $axios.defaults.httpsAgent = new https.Agent({ rejectUnauthorized: false })
+  $axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*'
 }

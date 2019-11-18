@@ -60,6 +60,8 @@ api.add_resource(resources.AllNodesPublic, '/api/node/public')
 api.add_resource(resources.AllNodesPublicCurrent, '/api/node/public/current')
 #get
 api.add_resource(resources.AllNodesPrivate, '/api/node/private')
+#get
+api.add_resource(resources.GetNode, '/api/node/<int:id>')
 #post
 api.add_resource(resources.CreateNode, '/api/node')
 #post

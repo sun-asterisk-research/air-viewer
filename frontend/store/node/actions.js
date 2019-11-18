@@ -9,7 +9,39 @@ export default {
       .then((response) => {
         commit('SET_NODES', response)
       }).catch((err) => {
-        console.log(err)
+        this.$toast.error(err.message)
+      })
+  },
+
+  async registerNode ({ commit }, params) {
+    await this.$axios
+      .$post('/api/node', params)
+      .then((response) => {
+        this.$toast.success(response.message)
+        this.$router.push('/admin/node/list-nodes')
+      }).catch((err) => {
+        this.$toast.error(err.message)
+      })
+  },
+
+  async editNode ({ commit }, params) {
+    await this.$axios
+      .$post(`/api/node/${params.id}`, params)
+      .then((response) => {
+        this.$toast.success(response.message)
+        this.$router.push('/admin/node/list-nodes')
+      }).catch((err) => {
+        this.$toast.error(err.message)
+      })
+  },
+
+  async deleteNode ({ commit }, id) {
+    await this.$axios
+      .$delete(`/api/node/${id}`)
+      .then((response) => {
+        this.$toast.success(response.message)
+      }).catch((err) => {
+        this.$toast.error(err.message)
       })
   }
 }

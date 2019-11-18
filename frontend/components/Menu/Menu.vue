@@ -22,16 +22,16 @@
       <li>
         <a
           href="#"
-          :class="highlightSection('products')"
-          @click.prevent="updateMenu('products')"
+          :class="highlightSection('nodes')"
+          @click.prevent="updateMenu('nodes')"
         >
           <i class="fa fa-tag menu__icon" aria-hidden="true" />
-          Products
+          Nodes
           <i class="fa fa-chevron-right menu__arrow-icon" aria-hidden="true" />
         </a>
       </li>
 
-      <li>
+      <!-- <li>
         <a
           href="#"
           :class="highlightSection('customers')"
@@ -53,7 +53,7 @@
           Account
           <i class="fa fa-chevron-right menu__arrow-icon" aria-hidden="true" />
         </a>
-      </li>
+      </li> -->
     </ul>
 
     <!-- context menu: childs of root level itens -->
@@ -111,14 +111,11 @@ export default {
     }
   },
   methods: {
-    openProjectLink () {
-      alert('You could open the project frontend in another tab here, so the logged admin could see changes made to the project ;)')
-    },
     updateMenu (context) {
       this.contextSection = context
       this.menuItens = this.menuData[context]
       if (context === 'home') {
-        this.$router.push('/')
+        this.$router.push('/admin/dashboard')
         this.$store.dispatch('menu/closeMobileMenu')
       }
     },

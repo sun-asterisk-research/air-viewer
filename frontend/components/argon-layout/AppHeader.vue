@@ -105,7 +105,7 @@
             <span class="nav-link-inner--text d-lg-none">Github</span>
           </a>
         </li>
-        <base-dropdown v-if="isAuthenticated" tag="li" class="nav-item d-none d-md-block ml-lg-4">
+        <base-dropdown v-if="isAuthenticated" tag="li" class="nav-item d-md-block ml-lg-4">
           <a slot="title" href="#" class="nav-link btn btn-neutral btn-icon" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none" />
             <span class="nav-link-inner--text text-color">{{ loggedInUser }}</span>
@@ -115,7 +115,7 @@
             Logout
           </a>
         </base-dropdown>
-        <li v-else class="nav-item d-none d-lg-block ml-lg-4">
+        <li v-else class="nav-item d-lg-block ml-lg-4">
           <nuxt-link to="/login" class="btn btn-neutral btn-icon">
             <span class="btn-inner--icon">
               <i class="fa fa-cloud-download mr-2" />

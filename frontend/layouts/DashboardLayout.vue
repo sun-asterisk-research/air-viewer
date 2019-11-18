@@ -19,22 +19,12 @@
         </div>
 
         <ul class="navbar-nav ml-lg-auto">
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#">
-              Discover
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link nav-link-icon" href="#">
-              Profile
-            </a>
-          </li>
-          <base-dropdown tag="li" title="Settings">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+          <base-dropdown tag="li" :title="loggedInUser">
+            <a class="dropdown-item" href="#" @click.prevent="logout">Logout</a>
+            <!-- <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="#">Something else here</a>
             <div class="dropdown-divider" />
-            <a class="dropdown-item" href="#">Separated link</a>
+            <a class="dropdown-item" href="#">Separated link</a> -->
           </base-dropdown>
         </ul>
       </base-nav>
@@ -45,7 +35,7 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 const BaseNav = () => import('@/components/argon/BaseNav')
 const BaseDropdown = () => import('@/components/argon/BaseDropdown')
 const MenuToggleBtn = () => import('@/components/Menu/MenuToggleBtn')
@@ -66,10 +56,16 @@ export default {
     ...mapState('menu', {
       toggleMenu: 'isOpenMobileMenu'
     }),
+    ...mapGetters(['isAuthenticated', 'loggedInUser']),
     wrapperClass () {
       return {
         'toggled': this.toggleMenu === true
       }
+    }
+  },
+  methods: {
+    async logout () {
+      await this.$auth.logout()
     }
   }
 }
