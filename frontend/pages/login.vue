@@ -119,6 +119,7 @@ export default {
         })
         if (this.$auth.loggedIn) {
           this.$toast.success('Successfully Logged In')
+          this.$router.push('/admin/dashboard')
         }
       } catch (e) {
         this.$toast.error('Username or Password wrong')

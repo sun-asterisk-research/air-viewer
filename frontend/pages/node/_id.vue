@@ -195,6 +195,15 @@ export default {
     })
 
     this.chart = chart
+    this.chartweekly = chartweekly
+  },
+  beforeDestroy () {
+    if (this.chart) {
+      this.chart.dispose()
+    }
+    if (this.chartweekly) {
+      this.chartweekly.dispose()
+    }
   },
   methods: {
     showDaily () {
@@ -204,11 +213,6 @@ export default {
     showWeekly () {
       this.daily = false
       this.weekly = true
-    }
-  },
-  beforeDestroy () {
-    if (this.chart) {
-      this.chart.dispose()
     }
   }
 }

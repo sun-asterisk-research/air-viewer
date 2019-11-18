@@ -24,6 +24,7 @@
     "bootstrap-vue": "^2.0.0-rc.24",
     "cross-env": "^5.2.0",
     "flatpickr": "^4.6.1",
+    "lodash": "^4.17.15",
     "nouislider": "^14.0.1",
     "nuxt": "^2.8.1",
     "v-click-outside": "^2.1.3",
