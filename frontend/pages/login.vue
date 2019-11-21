@@ -20,7 +20,7 @@
             body-classes="px-lg-5 py-lg-5"
             class="border-0"
           >
-            <template>
+            <!-- <template>
               <div class="text-muted text-center mb-3">
                 <small>Sign in with</small>
               </div>
@@ -35,11 +35,11 @@
                   Google
                 </base-button>
               </div>
-            </template>
+            </template> -->
             <template>
-              <div class="text-center text-muted mb-4">
+              <!-- <div class="text-center text-muted mb-4">
                 <small>Or sign in with credentials</small>
-              </div>
+              </div> -->
               <form role="form">
                 <base-input
                   v-model="username"
@@ -56,9 +56,9 @@
                   placeholder="Password"
                   addon-left-icon="ni ni-lock-circle-open"
                 />
-                <base-checkbox>
+                <!-- <base-checkbox>
                   Remember me
-                </base-checkbox>
+                </base-checkbox> -->
                 <div class="text-center">
                   <base-button type="primary" class="my-4" @click="login">
                     Sign In
@@ -67,7 +67,7 @@
               </form>
             </template>
           </card>
-          <div class="row mt-3">
+          <!-- <div class="row mt-3">
             <div class="col-6">
               <a href="#" class="text-light">
                 <small>Forgot password?</small>
@@ -78,7 +78,7 @@
                 <small>Create new account</small>
               </a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

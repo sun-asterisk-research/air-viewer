@@ -48,28 +48,20 @@
         <div class="col-md-6">
           <div class="copyright">
             &copy; {{ year }}
-            <a href="#" target="_blank" rel="noopener">Sun*</a> & <a href="#" target="_blank" rel="noopener">R&D Research</a>
+            <a href="https://sun-asterisk.vn" target="_blank" rel="noopener">Sun*</a> & <a href="https://research.sun-asterisk.com/vi" target="_blank" rel="noopener">R&D Research</a>
           </div>
         </div>
         <div class="col-md-6">
           <ul class="nav nav-footer justify-content-end">
             <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank" rel="noopener">Sun*</a>
+              <a href="https://sun-asterisk.vn" class="nav-link" target="_blank" rel="noopener">Sun*</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank" rel="noopener">About
+              <a href="https://research.sun-asterisk.com/vi" class="nav-link" target="_blank" rel="noopener">About
                 Us</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link" target="_blank" rel="noopener">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a
-                href="#"
-                class="nav-link"
-                target="_blank"
-                rel="noopener"
-              >MIT License</a>
+              <a href="/faq" class="nav-link" target="_blank" rel="noopener">FAQ</a>
             </li>
           </ul>
         </div>

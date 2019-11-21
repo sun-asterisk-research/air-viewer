@@ -3,7 +3,7 @@
     <hero>
       <div class="">
         <p class="lead text-white">
-          <span> Hanoi air quality daily forecast </span>
+          <span> Hanoi air quality daily </span>
         </p>
       </div>
       <div class="mt-3 mb-5">
