@@ -138,9 +138,7 @@ class CreateNode(Resource):
             lat = data['lat'],
             long = data['long'],
             manager = data['manager'],
-            key = generateCode,
-            created_at = datetime.now(timezone('Asia/Ho_Chi_Minh')),
-            updated_at = datetime.now(timezone('Asia/Ho_Chi_Minh'))
+            key = generateCode
         )
         try:
             new_node.save_to_db()
@@ -190,7 +188,9 @@ class StoreData(Resource):
                 aqi = data['aqi'],
                 pm25 = data['pm25'],
                 pm10 = data['pm10'],
-                node_id = node_id.id
+                node_id = node_id.id,
+                created_at = datetime.now(timezone('Asia/Ho_Chi_Minh')),
+                updated_at = datetime.now(timezone('Asia/Ho_Chi_Minh'))
             )
             new_node.save_to_db()
             return {
