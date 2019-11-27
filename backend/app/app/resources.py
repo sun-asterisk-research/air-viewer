@@ -1,4 +1,6 @@
 from flask_restful import Resource, reqparse
+from datetime import datetime
+from pytz import timezone
 from app.models import UserModel, RevokedTokenModel, NodeModel, DataNodesModel
 from flask_jwt_extended import (create_access_token, create_refresh_token, jwt_required, jwt_refresh_token_required, get_jwt_identity, get_raw_jwt)
 
@@ -136,7 +138,9 @@ class CreateNode(Resource):
             lat = data['lat'],
             long = data['long'],
             manager = data['manager'],
-            key = generateCode
+            key = generateCode,
+            created_at = datetime.now(timezone('Asia/Ho_Chi_Minh')),
+            updated_at = datetime.now(timezone('Asia/Ho_Chi_Minh'))
         )
         try:
             new_node.save_to_db()
