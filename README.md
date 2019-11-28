@@ -35,3 +35,35 @@ bash ./backend-live.sh
 cd frontend
 npm run dev
 ```
+
+## Client
+Connect SDS011 with raspberry pi
+Clone git 
+```
+git clone https://github.com/sun-asterisk-research/air-visual.git
+```
+```
+cd client
+pip3 install -r requirements.txt
+```
+Test code Client
+```
+python3 aqi_client.py
+```
+Result
+```
+Result: AQI: 15, PM2.5: 3.5, PM10: 4.3
+2019-11-27 17:17:46.292042
+```
+Edit client
+```
+vim aqi_client.py
+```
+Edit `url = 'https://airviewer.sun-asterisk.vn/api/secret/xxxx'`
+with `xxxx=<secret key>`
+
+Setup crontab
+```
+crontab -l 
+*/5 * * * * python3 air-visual/client/aqi_client.py >> log.txt &
+```
