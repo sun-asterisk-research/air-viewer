@@ -12,7 +12,7 @@ api = Api(app)
 
 # Config Mysql
 DB_HOST = os.getenv('DB_HOST', 'localhost')
-DB_DATABASE = os.getenv('DB_DATABASE', 'air_visual')
+DB_DATABASE = os.getenv('DB_DATABASE', 'air_viewer')
 DB_USERNAME = os.getenv('DB_USERNAME', 'root')
 DB_PASSWORD = os.getenv('DB_PASSWORD', 'root')
 

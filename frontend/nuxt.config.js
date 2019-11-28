@@ -56,6 +56,7 @@ export default {
   plugins: [
     '~/plugins/argon/argon-kit',
     '~/plugins/axios',
+    { src: '~plugins/carousel-3d.js', ssr: false },
     {
       src: '~/plugins/amcharts.js',
       ssr: false

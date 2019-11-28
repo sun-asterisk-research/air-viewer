@@ -161,7 +161,7 @@ class NodeModel(db.Model):
                         HOUR(created_at) as created_at FROM datas \
                         WHERE node_id = :node_id AND DATE_SUB(`created_at`,INTERVAL 1 HOUR) And \
                         created_at > DATE_SUB(NOW(), INTERVAL 1 DAY) \
-                        GROUP BY HOUR(created_at)', {'node_id': x.id})
+                        GROUP BY HOUR(created_at) ORDER BY id', {'node_id': x.id})
             if data24h.returns_rows == False:
                 response_24h = []
             # Convert the response to a plain list of dicts
@@ -173,7 +173,7 @@ class NodeModel(db.Model):
                         DATE_FORMAT(created_at, '%d/%m') as created_at FROM datas \
                         WHERE node_id = :node_id AND DATE_SUB(`created_at`, INTERVAL 7 DAY) And \
                         created_at > DATE_SUB(NOW(), INTERVAL 7 DAY) \
-                        GROUP BY DATE_FORMAT(created_at, '%d/%m')", {'node_id': x.id})
+                        GROUP BY DATE_FORMAT(created_at, '%d/%m') ORDER BY id", {'node_id': x.id})
             if data7day.returns_rows == False:
                 response_7day = []
             # Convert the response to a plain list of dicts

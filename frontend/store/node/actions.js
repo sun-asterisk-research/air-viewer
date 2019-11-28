@@ -9,7 +9,7 @@ export default {
       .then((response) => {
         commit('SET_NODES', response)
       }).catch((err) => {
-        this.$toast.error(err.message)
+        console.log(err)
       })
   },
 

@@ -14,16 +14,6 @@
           <a
             target="_blank"
             rel="noopener"
-            href="https://twitter.com/hashtag/sunasterisk"
-            class="btn btn-neutral btn-icon-only btn-twitter btn-round btn-lg"
-            data-toggle="tooltip"
-            data-original-title="Follow us"
-          >
-            <i class="fab fa-twitter" />
-          </a>
-          <a
-            target="_blank"
-            rel="noopener"
             href="https://www.facebook.com/SunAsteriskVietnam"
             class="btn btn-neutral btn-icon-only btn-facebook btn-round btn-lg"
             data-toggle="tooltip"
@@ -48,7 +38,7 @@
         <div class="col-md-6">
           <div class="copyright">
             &copy; {{ year }}
-            <a href="https://sun-asterisk.vn" target="_blank" rel="noopener">Sun*</a> & <a href="https://research.sun-asterisk.com/vi" target="_blank" rel="noopener">R&D Research</a>
+            <a href="https://research.sun-asterisk.com/vi" target="_blank" rel="noopener">Sun* R&D</a>
           </div>
         </div>
         <div class="col-md-6">

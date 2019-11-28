@@ -15,7 +15,7 @@
     <div class="container shape-container d-flex align-items-center">
       <div class="col px-0">
         <div class="row justify-content-center align-items-center">
-          <div class="col-lg-7 text-center pt-lg">
+          <div class="col-lg-10 text-center pt-lg">
             <slot>
               <p class="lead text-white mt-4 mb-5">
                 A beautiful Design System for Bootstrap 4. It's Free and Open Source.

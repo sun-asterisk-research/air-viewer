@@ -66,7 +66,7 @@
             <span class="nav-link-inner--text d-lg-none">Facebook</span>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="nav-link nav-link-icon"
             href="https://www.instagram.com/explore/tags/sunasterisk"
@@ -91,7 +91,7 @@
             <i class="fab fa-twitter-square" />
             <span class="nav-link-inner--text d-lg-none">Twitter</span>
           </a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a
             class="nav-link nav-link-icon"
@@ -105,7 +105,7 @@
             <span class="nav-link-inner--text d-lg-none">Github</span>
           </a>
         </li>
-        <base-dropdown v-if="isAuthenticated" tag="li" class="nav-item d-md-block ml-lg-4">
+        <!-- <base-dropdown v-if="isAuthenticated" tag="li" class="nav-item d-md-block ml-lg-4">
           <a slot="title" href="#" class="nav-link btn btn-neutral btn-icon" data-toggle="dropdown" role="button">
             <i class="ni ni-collection d-lg-none" />
             <span class="nav-link-inner--text text-color">{{ loggedInUser }}</span>
@@ -122,7 +122,7 @@
             </span>
             <span class="nav-link-inner--text">Login</span>
           </nuxt-link>
-        </li>
+        </li> -->
       </ul>
     </base-nav>
   </header>
@@ -138,14 +138,6 @@ export default {
     BaseNav,
     CloseButton,
     BaseDropdown
-  },
-  computed: {
-    ...mapGetters(['isAuthenticated', 'loggedInUser'])
-  },
-  methods: {
-    async logout () {
-      await this.$auth.logout()
-    }
   }
 }
 </script>
