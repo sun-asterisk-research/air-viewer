@@ -3,9 +3,9 @@
     <header class="header-global">
       <starter-header />
     </header>
-    <main class="flex-fill position-relative">
+    <div class="">
       <nuxt />
-    </main>
+    </div>
     <footer class="footer">
       <starter-footer />
     </footer>
