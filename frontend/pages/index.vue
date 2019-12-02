@@ -3,6 +3,32 @@
     <client-only>
       <hero>
         <div class="mt-3 mb-5">
+          <b-carousel
+            indicators
+            :interval="5000"
+            class="mobile h-50"
+          >
+            <b-carousel-slide v-for="node in nodes" :key="node.id" class="slide">
+              <template slot="img">
+                <b-card class="text-center" :class="['card-' + node.data.status.type]" @click="detailNode(node)">
+                  <b-card-title>
+                    <i class="ni ni-compass-04" />
+                    <span>{{ node.address }}</span>
+                  </b-card-title>
+                  <b-card-text class="card__status" :class="['color-' + node.data.status.type]">
+                    {{ node.data.status.info }}
+                  </b-card-text>
+                  <b-card-text class="card__status-data" :class="['color-' + node.data.status.type]">
+                    {{ node.data.aqi }} <span class="card__status-param">US AQI</span>
+                  </b-card-text>
+                  <b-card-text class="card__status-info" :class="['color-' + node.data.status.type]">
+                    <span class="card__status-number">PM2.5 | {{ node.data.pm25 }} µg/m³</span>
+                    <span class="card__status-number">PM10 | {{ node.data.pm10 }} µg/m³</span>
+                  </b-card-text>
+                </b-card>
+              </template>
+            </b-carousel-slide>
+          </b-carousel>
           <carousel-3d
             :height="400"
             :width="600"
@@ -12,6 +38,7 @@
             :space="620"
             dir="ltr"
             :autoplay-timeout="3000"
+            class="desktop"
           >
             <slide v-for="node in nodes" :key="node.id" :index="node.id - 1" class="slide">
               <div>
@@ -70,10 +97,6 @@ export default {
   cursor: pointer;
 }
 .card {
-  &-body {
-    height: 400px;
-    width: 600px;
-  }
   &-1 {
     background-color: #A8E05F;
   }
@@ -140,6 +163,22 @@ export default {
   }
   &-6 {
     color: #683e51;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .mobile {
+    display: none;
+  }
+  .card-body {
+    height: 400px !important;
+    width: 600px !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .desktop {
+    display: none;
   }
 }
 </style>
