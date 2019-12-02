@@ -3,7 +3,16 @@
     <client-only>
       <hero>
         <div class="mt-3 mb-5">
-          <carousel-3d :height="400" :width="600" :border="1">
+          <carousel-3d
+            :height="400"
+            :width="600"
+            :border="1"
+            :perspective="5"
+            :autoplay="true"
+            :space="620"
+            dir="ltr"
+            :autoplay-timeout="3000"
+          >
             <slide v-for="node in nodes" :key="node.id" :index="node.id - 1" class="slide">
               <div>
                 <b-card class="text-center" :class="['card-' + node.data.status.type]">
@@ -25,7 +34,7 @@
                   </b-card-text>
 
                   <b-card-text class="pt-4" @click="detailNode(node)">
-                    More Detail
+                    Thông tin chi tiết
                   </b-card-text>
                 </b-card>
               </div>

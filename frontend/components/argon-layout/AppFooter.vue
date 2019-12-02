@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer has-cards">
+  <footer class="">
     <div class="container">
-      <div class="row row-grid align-items-center my-md">
+      <!-- <div class="row row-grid align-items-center my-md">
         <div class="col-lg-6">
           <h3 class="text-primary font-weight-light mb-2">
             Thank you for supporting us!
@@ -32,8 +32,8 @@
             <i class="fab fa-github" />
           </a>
         </div>
-      </div>
-      <hr>
+      </div> -->
+      <!-- <hr> -->
       <div class="row align-items-center justify-content-md-between">
         <div class="col-md-6">
           <div class="copyright">
@@ -50,9 +50,9 @@
               <a href="https://research.sun-asterisk.com/vi" class="nav-link" target="_blank" rel="noopener">About
                 Us</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="/faq" class="nav-link" target="_blank" rel="noopener">FAQ</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </div>

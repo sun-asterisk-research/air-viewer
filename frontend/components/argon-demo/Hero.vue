@@ -12,10 +12,10 @@
       <span class="span-50" />
       <span class="span-100" />
     </div>
-    <div class="container shape-container d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center">
       <div class="col px-0">
         <div class="row justify-content-center align-items-center">
-          <div class="col-lg-10 text-center pt-lg">
+          <div class="col-lg-10 text-center pt-lg mt-5">
             <slot>
               <p class="lead text-white mt-4 mb-5">
                 A beautiful Design System for Bootstrap 4. It's Free and Open Source.
@@ -23,9 +23,9 @@
             </slot>
           </div>
         </div>
-        <div class="row align-items-center justify-content-around stars-and-coded">
-          <div class="col-sm-12 mt-10 mt-sm-0 text-right">
-            <span class="text-white alpha-7 ml-3">Star us on</span>
+        <div class="row align-items-center justify-content-around stars-coded">
+          <div class="col-sm-10 mt-sm-0 text-right mb-5">
+            <span class="text-white alpha-7 ml-3">Hãy vote Star cho chúng tôi trên</span>
             <a href="https://github.com/sun-asterisk-research/air-visual" target="_blank" title="Support us on Github">
               <img src="/argon/img/brand/github-white-slim.png" style="height: 22px; margin-top: -3px">
             </a>
@@ -44,5 +44,11 @@
 <script>
 export default {}
 </script>
-<style>
+<style lang="scss" scoped>
+.section-hero {
+  height: 80vh;
+}
+.stars-coded {
+  margin-top: 4em;
+}
 </style>

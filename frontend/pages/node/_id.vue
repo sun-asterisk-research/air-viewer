@@ -19,11 +19,11 @@
             <div class="row">
               <div class="col-lg-6">
                 <h1 class="display-3  text-white">
-                  A daily report air visual
-                  <span>completed with chart</span>
+                  Báo cáo khách quan chất lượng không khí
+                  <span>được vẽ bằng biểu đồ</span>
                 </h1>
                 <p class="lead  text-white">
-                  We collect real data from sensors locations in {{ data[0].address }}.
+                  Chúng tôi thu thập dữ liệu thực từ các vị trí cảm biến ở {{ data[0].address }}.
                 </p>
                 <div class="btn-wrapper">
                   <base-button
@@ -32,7 +32,7 @@
                     type="info"
                     icon="ni ni-bold-down"
                   >
-                    24 hours
+                    24 Giờ
                   </base-button>
                   <base-button
                     v-else
@@ -41,7 +41,7 @@
                     icon="ni ni-bold-right"
                     @click="showDaily"
                   >
-                    24 hours
+                    24 giờ
                   </base-button>
                   <base-button
                     v-if="weekly"
@@ -49,7 +49,7 @@
                     type="info"
                     icon="ni ni-bold-down"
                   >
-                    7 days
+                    7 ngày
                   </base-button>
                   <base-button
                     v-else
@@ -58,7 +58,7 @@
                     icon="ni ni-bold-right"
                     @click="showWeekly"
                   >
-                    7 day
+                    7 ngày
                   </base-button>
                 </div>
               </div>
