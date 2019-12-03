@@ -24,9 +24,9 @@ export default {
   ** https://developer.mozilla.org/en-US/docs/Web/Manifest
   */
   manifest: {
-    name: 'Sun* Air Visual',
-    short_name: 'Sun* Air Visual',
-    description: 'Sun* Air Visual',
+    name: 'Sun* Air Viewer',
+    short_name: 'Sun* Air Viewer',
+    description: 'Sun* Air Viewer',
     theme_color: '#172b4d'
   },
 
@@ -124,7 +124,7 @@ export default {
       }
     },
     redirect: {
-      login: '/?login=1',
+      login: '/login',
       logout: '/',
       user: '/profile',
       callback: '/'

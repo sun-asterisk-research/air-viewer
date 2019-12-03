@@ -36,14 +36,14 @@
                     Chi tiết của chỉ số AQI.
                   </nuxt-link>
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   Ai đã tạo ra dịch vụ này?
                 </dt>
                 <div class="mb-3">
                   Đơn giản, chúng tôi làm vì niềm vui.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   Dịch vụ Air Viewer này hoạt động như thế nào?
                 </dt>
@@ -52,7 +52,7 @@
                   Các bạn có thể xem thêm hướng dẫn về cách tự thiết lập một bộ thiết bị đo chất lượng không khí tại nhà thông qua <a href="https://viblo.asia/p/tu-do-chi-so-o-nhiem-khong-khi-tai-nha-voi-sensor-va-raspberry-pi-YWOZrBBvZQ0" target="_blank">bài viết này</a>.
                   Toàn bộ source code của dự án được public tại <a href="https://github.com/sun-asterisk-research/air-viewer" target="_blank">https://github.com/sun-asterisk-research/air-viewer</a>.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   Thông số của các bạn đưa ra có chính xác không?
                 </dt>
@@ -60,7 +60,7 @@
                   Thông số được hiển thị tại Air Viewer là kết quả được lấy trực tiếp từ sensor. Chúng tôi không hề can thiệp hay chỉnh sửa.
                   Còn chính xác hay không thì phụ thuộc vào thiết bị nữa.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   Tôi đã tự làm được một bộ thiết bị đo chất lượng không khí ở nhà rồi, giờ tôi muốn đóng góp dữ liệu cho hệ thống thì phải làm thế nào?
                 </dt>
@@ -68,7 +68,7 @@
                   Do rất khó để kiểm soát độ chính xác của dữ liệu submit từ phía client lên, thế nên hiện tại chúng tôi chỉ cho phép các Node (các thiết bị) của các thành viên trong nhóm, những người mà chúng tôi thực sự tin tưởng, join vào và gửi dữ liệu lên hệ thống.
                   Chính vì thế, bước đầu tiên bạn cần làm đó là trở thành một thành viên của Sun* R&D. Hãy bắt đầu ngay <a href=" https://research.sun-asterisk.com/en/join-us" target="_blank">tại đây</a> nhé.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   Tôi thấy chỉ số không khí đang cao, chứng tỏ chất lượng không khí kém quá. Các bạn có thể giảm nó xuống, để không khí bớt ô nhiễm đi được không?
                 </dt>

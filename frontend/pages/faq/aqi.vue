@@ -52,7 +52,7 @@
                 <div class="mb-3">
                   Tận hưởng các hoạt động vui chơi ngoài trời thông thường của bạn. Mở cửa đón không khí bên ngoài.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   51-100, “Vừa phải”
                 </dt>
@@ -65,7 +65,7 @@
                 <div class="mb-3">
                   Các nhóm nhạy cảm nên giảm thời gian ở ngoài trời. Nên đóng cửa sổ để tránh không khí bẩn vào nhà
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   101-150, “Không tốt cho người thuộc nhóm nhạy cảm”
                 </dt>
@@ -78,7 +78,7 @@
                 <div class="mb-3">
                   Mọi người hạn chế các hoạt động ngoài trời. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   151-200, “Ô nhiễm”
                 </dt>
@@ -91,7 +91,7 @@
                 <div class="mb-3">
                   Mọi người nên tránh tập thể dục ngoài trời và chú ý đeo thêm khẩu trang. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   201-300, “Rất ô nhiễm”
                 </dt>
@@ -104,7 +104,7 @@
                 <div class="mb-3">
                   Mọi người nên tránh tập thể dục ngoài trời và chú ý đeo thêm khẩu trang. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe.
                 </div>
-                <br/>
+                <br>
                 <dt class="mb-3">
                   301-500+, “Nguy hiểm”
                 </dt>
@@ -117,7 +117,7 @@
                 <div class="mb-3">
                   Mọi người nên tránh tập thể dục ngoài trời và chú ý đeo thêm khẩu trang chống bụi. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe.
                 </div>
-                <br/>
+                <br>
                 <div class="mb-3">
                   <em>
                     **Các nhóm nhạy cảm bao gồm trẻ em, người già và người mang thai hoặc những người mắc các bệnh về tim hoặc phổi.
