@@ -133,12 +133,12 @@ class NodeModel(db.Model):
             elif data <= 200:
                 return {
                     "type": 4,
-                    "info": "Không tốt"
+                    "info": "Ô nhiễm"
                 }
             elif data <= 300:
                 return {
                     "type": 5,
-                    "info": "Cực kì không tốt"
+                    "info": "Rất ô nhiễm"
                 }
             else:
                 return {

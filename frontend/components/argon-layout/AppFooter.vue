@@ -50,9 +50,9 @@
               <a href="https://research.sun-asterisk.com/vi" class="nav-link" target="_blank" rel="noopener">About
                 Us</a>
             </li>
-            <!-- <li class="nav-item">
-              <a href="/faq" class="nav-link" target="_blank" rel="noopener">FAQ</a>
-            </li> -->
+            <li class="nav-item">
+              <a href="/faq" class="nav-link" target="_blank" rel="noopener">FAQs</a>
+            </li>
           </ul>
         </div>
       </div>
