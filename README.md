@@ -115,5 +115,5 @@ with `xxxx=<secret key>`
 Setup crontab
 ```
 crontab -l 
-*/5 * * * * python3 air-visual/client/aqi_client.py >> log.txt &
+*/5 * * * * python3 air-viewer/client/aqi_client.py >> log.txt &
 ```
