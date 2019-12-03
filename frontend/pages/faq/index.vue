@@ -41,7 +41,14 @@
                   Ai đã tạo ra dịch vụ này?
                 </dt>
                 <div class="mb-3">
-                  Đơn giản, chúng tôi làm vì niềm vui.
+                  Chúng tôi là các thành viên thuộc nhóm R&D của công ty Sun Asterisk Vietnam
+                </div>
+                <br>
+                <dt class="mb-3">
+                  Các bạn tạo ra dịch vụ này với mục đích gì?
+                </dt>
+                <div class="mb-3">
+                  Đơn giản, chúng tôi làm vì niềm vui
                 </div>
                 <br>
                 <dt class="mb-3">

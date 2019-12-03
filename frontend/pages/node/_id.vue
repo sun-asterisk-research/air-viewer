@@ -14,21 +14,23 @@
           <span />
           <span />
         </div>
-        <div class="container shape-container d-flex">
+        <div class="container shape-container d-flex mt-20">
           <div class="col px-0">
-            <div class="row">
-              <div class="col-lg-6">
-                <h1 class="display-3  text-white">
+            <div class="row justify-content-between align-items-end">
+              <div class="col-lg-8">
+                <h2 class="display-3 text-white">
                   Báo cáo khách quan chất lượng không khí
                   <span>được vẽ bằng biểu đồ</span>
-                </h1>
+                </h2>
                 <p class="lead  text-white">
                   Chúng tôi thu thập dữ liệu thực từ các vị trí cảm biến ở {{ data[0].address }}.
                 </p>
-                <div class="btn-wrapper">
+              </div>
+              <div class="col-lg-4">
+                <div class="btn-wrapper mb-2">
                   <base-button
                     v-if="daily"
-                    class="mb-3 mb-sm-0"
+                    class="mb-3 mb-sm-0 ml-auto"
                     type="info"
                     icon="ni ni-bold-down"
                   >
@@ -36,7 +38,7 @@
                   </base-button>
                   <base-button
                     v-else
-                    class="mb-3 mb-sm-0"
+                    class="mb-3 mb-sm-0 ml-auto"
                     type="white"
                     icon="ni ni-bold-right"
                     @click="showDaily"
@@ -45,7 +47,7 @@
                   </base-button>
                   <base-button
                     v-if="weekly"
-                    class="mb-3 mb-sm-0"
+                    class="mb-3 mb-sm-0 ml-auto"
                     type="info"
                     icon="ni ni-bold-down"
                   >
@@ -53,7 +55,7 @@
                   </base-button>
                   <base-button
                     v-else
-                    class="mb-3 mb-sm-0"
+                    class="mb-3 mb-sm-0 ml-auto"
                     type="white"
                     icon="ni ni-bold-right"
                     @click="showWeekly"
@@ -68,7 +70,7 @@
       </section>
       <!-- 1st Hero Variation -->
     </div>
-    <section class="section section-lg pt-lg-0 mt--200">
+    <section class="section section-lg pt-lg-0 mt--250">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-12">
@@ -224,5 +226,14 @@ export default {
 }
 #chartweekly {
   height: 500px;
+}
+.mt-20 {
+  margin-top: -5em;
+}
+.mt--10 {
+  margin-top: -10px;
+}
+.mt--250 {
+  margin-top: -270px;
 }
 </style>
