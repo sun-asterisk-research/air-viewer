@@ -4,9 +4,13 @@ https://airviewer.sun-asterisk.vn/
 # Running a Air Viewer application backend + frontend over HTTPS with traefik and Let's Encrypt
 
 copy `.env.example` -> `.env`
+
+
 copy `frontend/.env.example` -> `frontend/.env`
 
+
 change to your domain in your `.env`. In this case `service.test`
+
 ```
 //.env
 API_HOST=service.test
@@ -23,7 +27,9 @@ MYSQL_ROOT_PASSWORD=root
 //frontend/.env
 API_HOST=https://service.test
 ```
+
 make sure that `/etc/hosts` add follow domain like `127.0.0.1 service.test`
+
 
 ## Run docker staging (can connect mysql via port 3306)
 
