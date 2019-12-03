@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <ul class="navbar-nav ml-lg-auto">
+        <ul v-if="loggedInUser" class="navbar-nav ml-lg-auto">
           <base-dropdown tag="li" :title="loggedInUser">
             <a class="dropdown-item" href="#" @click.prevent="logout">Logout</a>
             <!-- <a class="dropdown-item" href="#">Another action</a>
