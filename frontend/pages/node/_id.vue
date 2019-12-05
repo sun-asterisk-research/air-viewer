@@ -99,6 +99,15 @@ export default {
       weekly: false
     }
   },
+  head () {
+    return {
+      title: `Biểu đồ tại ${this.data[0].address}`,
+      meta: [
+        { property: 'og:title', content: `Sun* Air Viewer | Node ${this.data[0].address}` },
+        { property: 'og:description', content: `Biểu đồ chi tiết theo từng thời điểm mà sensor đo được tại ${this.data[0].address}` }
+      ]
+    }
+  },
   computed: {
     ...mapGetters('node', [
       'nodeDetail'

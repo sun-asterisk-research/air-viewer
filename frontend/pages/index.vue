@@ -77,6 +77,15 @@ import { mapGetters } from 'vuex'
 const Hero = () => import('~/components/argon-demo/Hero')
 
 export default {
+  head () {
+    return {
+      title: 'Sun* Air Viewer',
+      meta: [
+        { property: 'og:title', content: 'Sun* Air Viewer' },
+        { property: 'og:description', content: 'Thông tin tổng quan chung chất lượng không khí hiện tại' }
+      ]
+    }
+  },
   components: {
     Hero
   },

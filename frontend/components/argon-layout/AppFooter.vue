@@ -47,8 +47,7 @@
               <a href="https://sun-asterisk.vn" class="nav-link" target="_blank" rel="noopener">Sun*</a>
             </li>
             <li class="nav-item">
-              <a href="https://research.sun-asterisk.com/vi" class="nav-link" target="_blank" rel="noopener">About
-                Us</a>
+              <a href="https://research.sun-asterisk.com/vi" class="nav-link" target="_blank" rel="noopener">Về chúng tôi</a>
             </li>
             <li class="nav-item">
               <a href="/faq" class="nav-link" target="_blank" rel="noopener">FAQs</a>
