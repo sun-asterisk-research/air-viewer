@@ -93,13 +93,13 @@
         </li>
         <li class="nav-item">
           <nuxt-link
-            v-if="$i18n.locale === 'vi'"
-            :to="`/en` + $route.fullPath"
+            v-if="$i18n.locale === 'en'"
+            :to="`/vi` + $route.fullPath"
             class="nav-link"
             active-class="none"
             exact
           >
-            <span class="nav-link-inner--text">{{ $t('links.english') }}</span>
+            <span class="nav-link-inner--text">{{ $t('links.vietnamese') }}</span>
           </nuxt-link>
           <nuxt-link
             v-else
@@ -108,7 +108,7 @@
             active-class="none"
             exact
           >
-            <span class="nav-link-inner--text">{{ $t('links.vietnamese') }}</span>
+            <span class="nav-link-inner--text">{{ $t('links.english') }}</span>
           </nuxt-link>
         </li>
         <!-- <base-dropdown v-if="isAuthenticated" tag="li" class="nav-item d-md-block ml-lg-4">
