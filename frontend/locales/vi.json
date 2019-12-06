@@ -1,0 +1,120 @@
+{
+  "links": {
+      "english": "EN",
+      "vietnamese": "VI"
+  },
+  "home": {
+    "slide": {
+      "detail": "Thông tin chi tiết"
+    }
+  },
+  "navbar": {
+    "facebook": {
+      "title": "Hãy Like trang fanpage của chúng tôi trên Facebook"
+    },
+    "github": {
+      "title": "Hãy vote Star cho chúng tôi trên Github"
+    },
+    "faqs": {
+      "title": "Các câu hỏi thường gặp"
+    }
+},
+  "footer": {
+    "facebook": {
+      "title": "Hãy Like trang fanpage của chúng tôi trên Facebook"
+    },
+    "github": {
+      "title": "Hãy vote Star cho chúng tôi trên Github"
+    },
+    "faqs": {
+      "title": "Các câu hỏi thường gặp"
+    },
+    "about": "Về chúng tôi"
+  },
+  "index": {
+    "vote": "Hãy vote Star cho chúng tôi trên"
+  },
+  "login": "Đăng Nhập",
+  "node": {
+    "title": "Báo cáo khách quan chất lượng không khí",
+    "span": "được vẽ bằng biểu đồ",
+    "location": "Chúng tôi thu thập dữ liệu thực từ các vị trí cảm biến ở",
+    "hours": "Giờ",
+    "days": "Ngày"
+  },
+  "faq": {
+    "title": "FAQs",
+    "list": "Câu hỏi thường gặp",
+    "what_aqi": {
+      "title": "Chỉ số AQI là gì?",
+      "link": "Chi tiết của chỉ số AQI."
+    },
+    "ques1": {
+      "title": "Ai đã tạo ra dịch vụ này?",
+      "answer": "Chúng tôi là các thành viên thuộc nhóm R&D của công ty Sun Asterisk Vietnam"
+    },
+    "ques2": {
+      "title": "Các bạn tạo ra dịch vụ này với mục đích gì?",
+      "answer": "Đơn giản, chúng tôi làm vì niềm vui"
+    },
+    "ques3": {
+      "title": "Dịch vụ Air Viewer này hoạt động như thế nào?",
+      "answer": "Chúng tôi sử dụng Nova PM sensor SDS011 để đo chất lượng không khí. Sensor này sử dụng Lase để đo nên tính chính xác khá cao. Kết quả được xử lý tại thiết bị Rasberry Pi, và sau đó được đẩy lên hiển thị tại server. Các bạn có thể xem thêm hướng dẫn về cách tự thiết lập một bộ thiết bị đo chất lượng không khí tại nhà thông qua",
+      "link": "bài viết này",
+      "answer2": "Toàn bộ source code của dự án được public tại"
+    },
+    "ques4": {
+      "title": "Thông số của các bạn đưa ra có chính xác không?",
+      "answer": "Thông số được hiển thị tại Air Viewer là kết quả được lấy trực tiếp từ sensor. Chúng tôi không hề can thiệp hay chỉnh sửa. Còn chính xác hay không thì phụ thuộc vào thiết bị nữa."
+    },
+    "ques5": {
+      "title": "Tôi đã tự làm được một bộ thiết bị đo chất lượng không khí ở nhà rồi, giờ tôi muốn đóng góp dữ liệu cho hệ thống thì phải làm thế nào?",
+      "answer": "Do rất khó để kiểm soát độ chính xác của dữ liệu submit từ phía client lên, thế nên hiện tại chúng tôi chỉ cho phép các Node (các thiết bị) của các thành viên trong nhóm, những người mà chúng tôi thực sự tin tưởng, join vào và gửi dữ liệu lên hệ thống. Chính vì thế, bước đầu tiên bạn cần làm đó là trở thành một thành viên của Sun* R&D. Hãy bắt đầu ngay",
+      "link": "tại đây"
+    },
+    "ques6": {
+      "title": "Tôi thấy chỉ số không khí đang cao, chứng tỏ chất lượng không khí kém quá. Các bạn có thể giảm nó xuống, để không khí bớt ô nhiễm đi được không?",
+      "answer": "Xin lỗi, ở đây chúng tôi không làm thế."
+    }
+  },
+  "aqi": {
+    "title": "Chỉ số AQI là gì?",
+    "span": "Hướng dẫn tìm hiểu chỉ số chất lượng không khí",
+    "p1": "AQI, Air quality index là chỉ số chất lượng không khí. AQI là thước đo đơn giản hóa mức độ ô nhiễm không khí hiện tại hoặc dự báo mức độ ô nhiễm không khí trong tương lai. Rủi ro sức khỏe cộng đồng tăng lên khi AQI tăng.",
+    "p2": "AQI cao là do sự gia tăng khí thải (ví dụ, vào giờ cao điểm, phương tiện giao thông đi lại nhiều hoặc khi có cháy rừng) hoặc không khí ô nhiễm không thoát ra khỏi một vị trí xác định nào đó. Không khí ứ đọng gây ra do hiện tượng xoáy nghịch, nghịch nhiệt, hay gió thổi chậm khiến ô nhiễm không khí vẫn còn hiện diện trong một địa phương, dẫn đến sự tăng nồng độ các chất ô nhiễm, phản ứng hóa học giữa các chất thải và tạo điều kiện cho hiện tượng bụi mù.",
+    "p3": "Cục Bảo vệ Môi sinh Hoa Kỳ (EPA) phát triển Chỉ số Chất lượng Không khí. AQI này được chia thành sáu mức theo cấp độ ô nhiễm tăng dần. Giá trị AQI trên 300 thể hiện chất lượng không khí nguy hiểm và dưới 50 thể hiện chất lượng không khí tốt.",
+    "p4": "Các tiêu chuẩn như sau:",
+    "recommend": "Lời khuyên",
+    "t1": {
+      "type": "Tốt",
+      "title": "Chất lượng không khí ít gây ra rủi ro sức khỏe.",
+      "text": "Tận hưởng các hoạt động vui chơi ngoài trời thông thường của bạn. Mở cửa đón không khí bên ngoài."
+    },
+    "t2": {
+      "type": "Vừa phải",
+      "title": "Chất lượng không khí có thể chấp nhận được và gây ra ít rủi ro cho sức khỏe.",
+      "text": "Các nhóm nhạy cảm nên giảm thời gian ở ngoài trời. Nên đóng cửa sổ để tránh không khí bẩn vào nhà"
+    },
+    "t3": {
+      "type": "Không tốt cho người thuộc nhóm nhạy cảm",
+      "title": "Các cá nhân nói chung và nhóm nhạy cảm nói riêng có nguy cơ gặp phải các vấn đề về hô hấp.",
+      "text": "Mọi người hạn chế các hoạt động ngoài trời. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe."
+    },
+    "t4": {
+      "type": "Ô nhiễm",
+      "title": "Tăng khả năng nguy cơ bệnh về phổi đặc biệt là nhóm người nhạy cảm.",
+      "text": "Mọi người nên tránh tập thể dục ngoài trời và chú ý đeo thêm khẩu trang. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe."
+    },
+    "t5": {
+      "type": "Rất ô nhiễm",
+      "title": "Tất cả mọi người sẽ bị ảnh hưởng đáng kể về các bệnh liên quan đến không khí.",
+      "text": "Mọi người nên tránh tập thể dục ngoài trời và chú ý đeo thêm khẩu trang. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe."
+    },
+    "t6": {
+      "type": "Nguy hiểm",
+      "title": "Không khí ảnh hưởng mạnh tới sức khỏe.",
+      "text": "Mọi người nên tránh tập thể dục ngoài trời và chú ý đeo thêm khẩu trang chống bụi. Nên sử dụng máy lọc không khí để đảm bảo sức khỏe."
+    },
+    "quote": "**Các nhóm nhạy cảm bao gồm trẻ em, người già và người mang thai hoặc những người mắc các bệnh về tim hoặc phổi."
+  }
+}

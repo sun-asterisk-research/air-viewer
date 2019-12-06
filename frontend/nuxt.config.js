@@ -51,12 +51,16 @@ export default {
     'bootstrap-vue/dist/bootstrap-vue.css',
     '~assets/transitions.css'
   ],
+  router: {
+    middleware: 'i18n'
+  },
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '~/plugins/argon/argon-kit',
     '~/plugins/axios',
+    '~/plugins/i18n.js',
     { src: '~plugins/carousel-3d.js', ssr: false },
     {
       src: '~/plugins/amcharts.js',

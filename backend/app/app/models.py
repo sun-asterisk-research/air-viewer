@@ -118,32 +118,38 @@ class NodeModel(db.Model):
             if data <= 50:
                 return {
                     "type": 1,
-                    "info": "Tốt"
+                    "info": "Tốt",
+                    "infoEng": "Good"
                 }
             elif data <= 100:
                 return {
                     "type": 2,
-                    "info": "Vừa phải"
+                    "info": "Vừa phải",
+                    "infoEng": "Moderate"
                 }
             elif data <= 150:
                 return {
                     "type": 3,
-                    "info": "Không tốt cho sức khỏe với nhóm người nhạy cảm"
+                    "info": "Không tốt cho sức khỏe với nhóm người nhạy cảm",
+                    "infoEng": "Unhealthy for Sensitive Groups"
                 }
             elif data <= 200:
                 return {
                     "type": 4,
-                    "info": "Ô nhiễm"
+                    "info": "Ô nhiễm",
+                    "infoEng": "Unhealthy"
                 }
             elif data <= 300:
                 return {
                     "type": 5,
-                    "info": "Rất ô nhiễm"
+                    "info": "Rất ô nhiễm",
+                    "infoEng": "Very Unhealthy"
                 }
             else:
                 return {
                     "type": 6,
-                    "info": "Nguy hiểm"
+                    "info": "Nguy hiểm",
+                    "infoEng": "Hazardous"
                 }
         # fractal datas of node
         def to_json_data(data):

@@ -25,7 +25,7 @@
         </div>
         <div class="row align-items-center justify-content-around stars-coded">
           <div class="col-sm-10 mt-sm-0 text-right">
-            <span class="text-white alpha-7 ml-3">Hãy vote Star cho chúng tôi trên</span>
+            <span class="text-white alpha-7 ml-3">{{ $t('index.vote') }}</span>
             <a href="https://github.com/sun-asterisk-research/air-visual" target="_blank" title="Support us on Github">
               <img src="/argon/img/brand/github-white-slim.png" alt="github" style="height: 22px; margin-top: -3px">
             </a>

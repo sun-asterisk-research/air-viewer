@@ -1,13 +1,13 @@
 <template>
   <header class="header-global">
     <base-nav class="navbar-main" transparent type="" effect="light" expand>
-      <nuxt-link slot="brand" class="navbar-brand mr-lg-5" to="/">
+      <nuxt-link slot="brand" class="navbar-brand mr-lg-5" :to="$i18n.path('')">
         <img src="/argon/img/brand/white.png" alt="logo">
       </nuxt-link>
 
       <div slot="content-header" slot-scope="{closeMenu}" class="row">
         <div class="col-6 collapse-brand">
-          <nuxt-link to="/">
+          <nuxt-link :to="$i18n.path('')">
             <img src="/argon/img/brand/blue.png">
           </nuxt-link>
         </div>
@@ -56,13 +56,13 @@
         <li class="nav-item">
           <nuxt-link
             class="nav-link nav-link-icon mt-1"
-            to="/faq"
+            :to="$i18n.path('faq')"
             rel="noopener"
             data-toggle="tooltip"
-            title="FAQs"
+            :title="$t('navbar.faqs.title')"
           >
             <i class="fa fa-question-circle" />
-            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+            <span class="nav-link-inner--text d-lg-none">{{ $t('navbar.faqs.title') }}</span>
           </nuxt-link>
         </li>
         <li class="nav-item">
@@ -72,10 +72,10 @@
             target="_blank"
             rel="noopener"
             data-toggle="tooltip"
-            title="Like us on Facebook"
+            :title="$t('navbar.facebook.title')"
           >
             <i class="fab fa-facebook-square" />
-            <span class="nav-link-inner--text d-lg-none">Facebook</span>
+            <span class="nav-link-inner--text d-lg-none">{{ $t('navbar.facebook.title') }}</span>
           </a>
         </li>
         <li class="nav-item">
@@ -85,11 +85,31 @@
             target="_blank"
             rel="noopener"
             data-toggle="tooltip"
-            title="Star us on Github"
+            :title="$t('navbar.github.title')"
           >
             <i class="fab fa-github" />
-            <span class="nav-link-inner--text d-lg-none">Github</span>
+            <span class="nav-link-inner--text d-lg-none">{{ $t('navbar.github.title') }}</span>
           </a>
+        </li>
+        <li class="nav-item">
+          <nuxt-link
+            v-if="$i18n.locale === 'vi'"
+            :to="`/en` + $route.fullPath"
+            class="nav-link"
+            active-class="none"
+            exact
+          >
+            <span class="nav-link-inner--text">{{ $t('links.english') }}</span>
+          </nuxt-link>
+          <nuxt-link
+            v-else
+            :to="$route.fullPath.replace(/^\/[^\/]+/, '')"
+            class="nav-link"
+            active-class="none"
+            exact
+          >
+            <span class="nav-link-inner--text">{{ $t('links.vietnamese') }}</span>
+          </nuxt-link>
         </li>
         <!-- <base-dropdown v-if="isAuthenticated" tag="li" class="nav-item d-md-block ml-lg-4">
           <a slot="title" href="#" class="nav-link btn btn-neutral btn-icon" data-toggle="dropdown" role="button">

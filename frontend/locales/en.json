@@ -1,0 +1,120 @@
+{
+  "links": {
+      "english": "EN",
+      "vietnamese": "VI"
+  },
+  "home": {
+    "slide": {
+      "detail": "More details"
+    }
+  },
+  "navbar": {
+      "facebook": {
+        "title": "Like us on Facebook"
+      },
+      "github": {
+        "title": "Star us on Github"
+      },
+      "faqs": {
+        "title": "Frequently Asked Questions"
+      }
+  },
+  "footer": {
+    "facebook": {
+      "title": "Like us on Facebook"
+    },
+    "github": {
+      "title": "Star us on Github"
+    },
+    "faqs": {
+      "title": "FAQs"
+    },
+    "about": "About Us"
+  },
+  "index": {
+    "vote": "Star us on"
+  },
+  "login": "Sign In",
+  "node": {
+    "title": "A daily report air viewer",
+    "span": "completed with chart",
+    "location": "We collect real data from sensor locations in",
+    "hours": "Hours",
+    "days": "Days"
+  },
+  "faq": {
+    "title": "FAQs",
+    "list": "Frequently Asked Questions",
+    "what_aqi": {
+      "title": "What is AQI",
+      "link": "Details of the AQI index"
+    },
+    "ques1": {
+      "title": "Who created this service?",
+      "answer": "We are members of the R&D team of Sun Asterisk Vietnam"
+    },
+    "ques2": {
+      "title": "What purpose did you create this service?",
+      "answer": "We simply do it for fun"
+    },
+    "ques3": {
+      "title": "How does this Air Viewer service work?",
+      "answer": "We use Nova PM sensor SDS011 to measure air quality. This sensor uses Lase to measure, so the accuracy is quite high. The results are processed at the Rasberry Pi device, and then pushed to the server display. You can read more instructions on how to set up your own home air quality meter set through",
+      "link": "this article",
+      "answer2": "The entire source code of the project is public at"
+    },
+    "ques4": {
+      "title": "Are your specifications accurate?",
+      "answer": "The parameter displayed in Air Viewer is the result taken directly from the sensor. We do not interfere or correct. Whether exactly or not depends on the device."
+    },
+    "ques5": {
+      "title": "I have made my own set of home air quality meters, what should I do if I want to contribute data to the system?",
+      "answer": "Because it is difficult to control the accuracy of the submitted data from the client, we currently only allow nodes (devices) of our team members whom we really trust, join and send data to the system. Therefore, the first step you need to do is become a member of Sun * R&D. Get started right",
+      "link": "here"
+    },
+    "ques6": {
+      "title": "I see the air index is high, proving the air quality is too poor. Can you reduce it, to reduce the air pollution?",
+      "answer": "Sorry, we didn't do that here."
+    }
+  },
+  "aqi": {
+    "title": "What is the AQI?",
+    "span": "Guide to understanding the Air Quality Index",
+    "p1": "AQI, or Air Quality Index, is a system for translating sometimes confusing or unintuitive pollutant concentration measurements, into one easy-to-understand scale to clearly represent the health risk posed by ambient air pollution. The index formula usually considers up to 6 main pollutants (PM2.5, PM10, carbon monoxide, sulfur dioxide, nitrogen dioxide and ground level ozone), and calculates the respective health risk (or AQI number) for each one at any given time. The overall AQI number at a given moment is dictated by the 'riskiest' pollutant, with the highest AQI number.",
+    "p2": "A high AQI is due to an increase in emissions (for example, during peak hours, heavy traffic or when there is a forest fire) or polluted air does not escape a specified location. Stagnant air is caused by turbulence, heat inversions, or slow winds that cause air pollution to remain present in a locality, resulting in an increase in the concentration of pollutants, chemical reactions between waste and facilitate the phenomenon of dust.",
+    "p3": "The US Environmental Protection Agency (EPA) develops the Air Quality Index. This AQI is divided into six levels according to the level of increasing pollution. AQI values ​​above 300 indicate dangerous air quality and below 50 represent good air quality.",
+    "p4": "The standards are as follows:",
+    "recommend": "Recommendations",
+    "t1": {
+      "type": "Good",
+      "title": "Air quality is less likely to cause health risks.",
+      "text": "Enjoy your usual outdoor fun activities. Open the door to welcome outside air."
+    },
+    "t2": {
+      "type": "Moderate",
+      "title": "Air quality is acceptable and poses little risk to health.",
+      "text": "Sensitive groups should reduce time outdoors. Window should be closed to prevent dirty air entering the house"
+    },
+    "t3": {
+      "type": "Unhealthy for Sensitive Groups",
+      "title": "Individuals in general and sensitive groups in particular are at risk of breathing problems.",
+      "text": "People restrict outdoor activities. Should use air purifier to ensure health."
+    },
+    "t4": {
+      "type": "Unhealthy",
+      "title": "Increased likelihood of adverse effects and aggravation to the heart and lungs among general public - particularly for sensitive groups.",
+      "text": "Everyone should avoid outdoor exercise and take care to wear a pollution mask outdoors. Ventilation is discouraged. Air purifiers should be turned on."
+    },
+    "t5": {
+      "type": "Very Unhealthy",
+      "title": "General public will be noticeably affected. Sensitive groups will experience reduced endurance in activities. These individuals should remain indoors and restrict activities.",
+      "text": "Everyone should avoid outdoor exercise and take care to wear a pollution mask outdoors. Ventilation is discouraged. Air purifiers should be turned on."
+    },
+    "t6": {
+      "type": "Hazardous",
+      "title": "General public and sensitive groups are at high risk to experience strong irritations and adverse health effects that could trigger other illnesses. Everyone should avoid exercise and remain indoors.",
+      "text": "Everyone should avoid outdoor exercise and take care to wear a pollution mask outdoors. Ventilation is discouraged. Air purifiers should be turned on."
+    },
+    "quote": "**Sensitive groups include children, elderly and pregnant people or those suffering from cardiac or pulmonary diseases."
+  }
+}
