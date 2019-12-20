@@ -46,7 +46,7 @@ export default {}
 </script>
 <style lang="scss" scoped>
 .section-hero {
-  height: 100vh;
+  // height: 100vh;
 }
 .slider {
   margin-top: 6em;

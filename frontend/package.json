@@ -22,7 +22,7 @@
     "@nuxtjs/toast": "^3.3.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.24",
-    "cross-env": "^5.2.0",
+    "element-ui": "^2.13.0",
     "flatpickr": "^4.6.1",
     "lodash": "^4.17.15",
     "nouislider": "^14.0.1",
@@ -32,6 +32,7 @@
     "vue-flatpickr-component": "^8.1.2",
     "vue-i18n": "^8.15.1",
     "vue-lazyload": "^1.2.6",
+    "vue-scrollto": "^2.17.1",
     "vue2-transitions": "^0.3.0"
   },
   "devDependencies": {

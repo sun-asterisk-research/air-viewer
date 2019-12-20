@@ -49,7 +49,8 @@ export default {
     '@fortawesome/fontawesome-free/css/all.css',
     '~assets/argon/scss/argon.scss',
     'bootstrap-vue/dist/bootstrap-vue.css',
-    '~assets/transitions.css'
+    '~assets/transitions.css',
+    'element-ui/lib/theme-chalk/index.css'
   ],
   router: {
     middleware: 'i18n'
@@ -65,7 +66,8 @@ export default {
     {
       src: '~/plugins/amcharts.js',
       ssr: false
-    }
+    },
+    '~/plugins/element-ui'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -90,7 +92,9 @@ export default {
         'Carousel',
         'Spinner',
         'Card',
-        'Table'
+        'Table',
+        'Button',
+        'Embed'
       ],
       directivePlugins: [
         'Tooltip',
@@ -98,7 +102,8 @@ export default {
       ]
     }],
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    'vue-scrollto/nuxt'
   ],
   /*
   ** Axios module configuration

@@ -19,7 +19,8 @@ export default {
       .then((response) => {
         this.$toast.success(response.message)
         this.$router.push('/admin/node/list-nodes')
-      }).catch((err) => {
+      })
+      .catch((err) => {
         this.$toast.error(err.message)
       })
   },
@@ -30,7 +31,8 @@ export default {
       .then((response) => {
         this.$toast.success(response.message)
         this.$router.push('/admin/node/list-nodes')
-      }).catch((err) => {
+      })
+      .catch((err) => {
         this.$toast.error(err.message)
       })
   },
@@ -40,7 +42,8 @@ export default {
       .$delete(`/api/node/${id}`)
       .then((response) => {
         this.$toast.success(response.message)
-      }).catch((err) => {
+      })
+      .catch((err) => {
         this.$toast.error(err.message)
       })
   }
