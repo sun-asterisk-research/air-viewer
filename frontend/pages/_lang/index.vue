@@ -43,7 +43,7 @@
             :autoplay-timeout="3000"
             class="desktop"
           >
-            <slide v-for="node in nodes" :key="node.id" :index="node.id - 1" class="slide">
+            <slide v-for="(node, i) in nodes" :key="i" :index="i" class="slide">
               <div>
                 <b-card class="text-center" :class="['card-' + node.data.status.type]">
                   <b-card-title style="height: 2.5em;">
