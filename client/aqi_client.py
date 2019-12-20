@@ -38,5 +38,6 @@ if __name__ == '__main__':
 
     x = datetime.datetime.now()
     print (x)
-    r = requests.post(url=url, data=data, verify=False)
+    if aqi != 0:
+        r = requests.post(url=url, data=data, verify=False)
     print (r.text)
