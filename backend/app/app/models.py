@@ -158,7 +158,7 @@ class NodeModel(db.Model):
                 'pm25': data.pm25,
                 'pm10': data.pm10,
                 'status': air_status(data.aqi),
-                'created_at': data.created_at.strftime("%m/%d/%Y, %H:%M:%S")
+                'created_at': data.created_at.strftime("%d/%m/%Y, %H:%M:%S")
             }
         # fractal nodes
         def to_json(x):
@@ -187,7 +187,8 @@ class NodeModel(db.Model):
                 response_7day = [dict(row.items()) for row in data7day]
 
             try:
-                data = to_json_data(DataNodesModel.query.filter_by(node_id = x.id).order_by(DataNodesModel.created_at.desc()).first())
+                one_hour_interval_before = datetime.now(timezone('Asia/Ho_Chi_Minh')) - timedelta(hours=1)
+                data = to_json_data(DataNodesModel.query.filter_by(node_id = x.id).filter(DataNodesModel.created_at > one_hour_interval_before).order_by(DataNodesModel.created_at.desc()).first())
             except:
                 data = ''
             return {
