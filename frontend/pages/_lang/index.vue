@@ -47,6 +47,7 @@
             <el-table-column
               label="Address"
               prop="address"
+              align="center"
             >
               <template slot-scope="props">
                 <p :id="`index-${props.row.id}`">
@@ -56,6 +57,7 @@
             </el-table-column>
             <el-table-column
               label="AQI"
+              align="center"
             >
               <template slot-scope="props" width="100px">
                 <b-card-text
@@ -316,6 +318,10 @@ export default {
 @media only screen and (max-width: 700px) {
   .desktop {
     display: none;
+  }
+  .cell > p {
+    margin-bottom: 0;
+    text-align: center;
   }
 }
 
