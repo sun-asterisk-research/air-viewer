@@ -221,10 +221,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.slide {
-  cursor: pointer;
-  border-radius: 20px;
-}
 
 .card {
   &-1 {
@@ -305,16 +301,6 @@ export default {
   }
 }
 
-@media only screen and (min-width: 700px) {
-  .mobile {
-    display: none;
-  }
-  .card-body {
-    height: 620px !important;
-    width: 600px !important;
-  }
-}
-
 @media only screen and (max-width: 700px) {
   .desktop {
     display: none;
@@ -382,5 +368,21 @@ export default {
 }
 .float-right{
   float:right;
+}
+</style>
+
+<style lang="scss" scoped>
+@media only screen and (min-width: 700px) {
+  .mobile {
+    display: none;
+  }
+  .card-body {
+    height: 620px !important;
+    width: 600px !important;
+  }
+  .slide {
+    cursor: pointer;
+    border-radius: 25px;
+  }
 }
 </style>
