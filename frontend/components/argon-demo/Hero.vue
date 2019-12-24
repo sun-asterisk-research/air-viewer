@@ -52,6 +52,6 @@ export default {}
   margin-top: 6em;
 }
 .stars-coded {
-  margin-top: 10em;
+  margin-bottom: 10em;
 }
 </style>
