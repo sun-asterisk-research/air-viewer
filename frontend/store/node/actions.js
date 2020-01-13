@@ -2,7 +2,7 @@ export default {
   async getNodes ({ commit }) {
     let host = ''
     if (process.env.NUXT_APP_ENV === 'production') {
-      host = 'http://backend.app'
+      host = process.env.BACKEND_HOST
     }
     await this.$axios
       .$get(`${host}/api/node/public/current`)

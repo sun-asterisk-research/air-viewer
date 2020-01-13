@@ -1,0 +1,39 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-air-viewer
+  labels:
+    app: backend-air-viewer
+  namespace: air-viewer
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend-air-viewer
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: backend-air-viewer
+    spec:
+      containers:
+      - image: quanghung97/backend-air-viewer:v1
+        imagePullPolicy: Always
+        name: backend-air-viewer
+        env:
+          - name: DB_HOST
+            value: mysql:3306
+          - name: DB_DATABASE
+            value: air_viewer
+          - name: DB_USERNAME
+            value: root
+          - name: DB_PASSWORD
+            value: root
+        ports:
+        - containerPort: 80
+          protocol: TCP

@@ -1,0 +1,15 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: air-viewer
+  namespace: air-viewer
+spec:
+  host: framgia2c.mylabserver.com
+  tls:
+    secret: air-viewer-secret
+  routes:
+  - path: /api
+    route: air-viewer/backend-air-viewer
+  - path: /
+    route: air-viewer/frontend-air-viewer
+

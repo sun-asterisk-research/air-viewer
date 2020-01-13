@@ -1,0 +1,15 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServerRoute
+metadata:
+  name: backend-air-viewer
+  namespace: air-viewer
+spec:
+  host: framgia2c.mylabserver.com
+  upstreams:
+  - name: backend-air-viewer
+    service: backend-air-viewer
+    port: 80
+  subroutes:
+  - path: /api
+    action:
+      pass: backend-air-viewer
