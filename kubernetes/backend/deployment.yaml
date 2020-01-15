@@ -12,10 +12,7 @@ spec:
     matchLabels:
       app: backend-air-viewer
   strategy:
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
-    type: RollingUpdate
+    type: Recreate
   template:
     metadata:
       labels:
