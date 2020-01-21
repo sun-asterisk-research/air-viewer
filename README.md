@@ -153,7 +153,7 @@ spec:
 ```
 kubectl create -f nodeport.yaml
 ```
-### Setup Air-viewer namespace, deployments, servces
+### Setup Air-viewer namespace, deployments, services
 ```
 kubetcl create namespace air-viewer
 ```
