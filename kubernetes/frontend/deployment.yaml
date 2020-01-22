@@ -18,6 +18,7 @@ spec:
         app: frontend-air-viewer
     spec:
       containers:
+        # change custom image after change .env from /frontend
       - image: quanghung97/frontend-air-viewer:framgia2c
         imagePullPolicy: Always
         name: frontend-air-viewer

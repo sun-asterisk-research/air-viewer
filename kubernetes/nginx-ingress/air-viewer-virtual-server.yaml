@@ -4,6 +4,7 @@ metadata:
   name: air-viewer
   namespace: air-viewer
 spec:
+  # change this to your DNS
   host: framgia2c.mylabserver.com
   tls:
     secret: air-viewer-secret

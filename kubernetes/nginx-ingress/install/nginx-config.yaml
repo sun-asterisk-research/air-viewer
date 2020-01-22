@@ -5,6 +5,7 @@ metadata:
   namespace: nginx-ingress
 data:
 # 3 cái config mình custom thêm, có thể bỏ cũng được
+# https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-manifests/#4.1
   proxy-connect-timeout: "10s"
   proxy-read-timeout: "10s"
   client-max-body-size: "2m"

@@ -158,7 +158,9 @@ kubectl create -f nodeport.yaml
 kubetcl create namespace air-viewer
 ```
 
-apply all deployments and services in file yaml
+**We must rebuild container on local fit to your API_HOST and BACKEND_HOST from /frontend/.env and push custom image to docker hub**
+
+**apply all deployments and services in file yaml, change your custom image each deployment file yaml**
 https://github.com/sun-asterisk-research/air-viewer/tree/master/kubernetes
 folder (mysql, backend, frontend)
 

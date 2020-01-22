@@ -1,3 +1,5 @@
+# # https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-manifests/#4.1 may be can use service nginx-ingress loadbalancer
+
 apiVersion: v1
 kind: Service
 metadata:

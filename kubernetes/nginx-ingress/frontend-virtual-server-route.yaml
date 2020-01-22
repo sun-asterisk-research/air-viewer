@@ -4,6 +4,7 @@ metadata:
   name: frontend-air-viewer
   namespace: air-viewer
 spec:
+  # change this to your DNS
   host: framgia2c.mylabserver.com
   upstreams:
   - name: frontend-air-viewer
