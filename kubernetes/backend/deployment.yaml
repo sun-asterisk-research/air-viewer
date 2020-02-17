@@ -28,9 +28,12 @@ spec:
           - name: DB_DATABASE
             value: air_viewer
           - name: DB_USERNAME
-            value: root
+            value: example
           - name: DB_PASSWORD
-            value: root
+            valueFrom:
+              secretKeyRef:
+                name: mysql-pass-non-root
+                key: ROOT_PASSWORD
         ports:
         - containerPort: 80
           protocol: TCP
