@@ -1,5 +1,16 @@
 ![brand](https://github.com/sun-asterisk-research/air-viewer/blob/master/frontend/static/argon/img/brand/blue.png)
 
+<p align="center">
+    <!--contributors-->
+    <a href="#contributors">
+        <img alt="All Contributors" src="https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square">
+    </a>
+    <!--open issues-->
+    <a href="https://github.com/sun-asterisk-research/air-viewer/issues">
+        <img alt="GitHub open issues" src="https://img.shields.io/github/issues/sun-asterisk-research/air-viewer">
+    </a>
+</p>
+
 Web application:
 https://airviewer.sun-asterisk.vn/ 
 
