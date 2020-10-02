@@ -1,7 +1,18 @@
 ![brand](https://github.com/sun-asterisk-research/air-viewer/blob/master/frontend/static/argon/img/brand/blue.png)
 
+<p align="left">
+    <!--contributors-->
+    <a href="#contributors">
+        <img alt="All Contributors" src="https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square">
+    </a>
+    <!--open issues-->
+    <a href="https://github.com/sun-asterisk-research/air-viewer/issues">
+        <img alt="GitHub open issues" src="https://img.shields.io/github/issues/sun-asterisk-research/air-viewer">
+    </a>
+</p>
+
 Web application:
-https://airviewer.sun-asterisk.vn/ 
+https://airviewer.sun-asterisk.vn/
 
 # Running a Air Viewer application backend + frontend over HTTPS with traefik and Let's Encrypt
 
@@ -210,7 +221,7 @@ uWSGI==2.0.18
 Werkzeug==0.15.5
 ```
 
-Install envireonment 
+Install envireonment
 ```
 pip install -r requirements.txt
 
@@ -251,6 +262,6 @@ with `xxxx=<secret key>`
 
 Setup crontab
 ```
-crontab -l 
+crontab -l
 */5 * * * * python3 air-viewer/client/aqi_client.py >> log.txt &
 ```
