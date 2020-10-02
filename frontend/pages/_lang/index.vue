@@ -87,8 +87,8 @@
               <div>
                 <b-card class="text-center box-shadow" :class="['card-' + node.data.status.type]">
                   <b-card-title style="height: 2.5em;">
-                    <img v-if="node.id - 1 !== indexPin" class="icon-pin-desktop" src="/pin plus.png" @click="pinHome(node.id)">
-                    <img v-if="node.id - 1 === indexPin" class="icon-pin-desktop" src="/754604.png" @click="unPinHome(node.id)">
+                    <img v-if="node.id - 1 !== indexPin" class="icon-pin-desktop" src="/pin plus.png" @click="pinHome(node.id)" alt="Pin">
+                    <img v-if="node.id - 1 === indexPin" class="icon-pin-desktop" src="/754604.png" @click="unPinHome(node.id)" alt="Pin">
                     <span>{{ node.address }}</span>
                   </b-card-title>
 
